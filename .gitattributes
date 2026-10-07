@@ -1,0 +1,11 @@
+# Normalise line endings so Windows and Linux commits don't differ
+* text=auto eol=lf
+
+# Binary assets: never diff or convert
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.mp4  binary
+*.woff2 binary

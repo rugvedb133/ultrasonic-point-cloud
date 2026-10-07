@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>Design: ultrasonic-point-cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 :root{
-  --floor:#2f3150;--void:#14151f;--point:#f2f4ff;--pcb:#1d6fb8;--red:#d3222a;--wire:#f08a24;--ax-g:#35d07f;--ax-b:#6f86ff;
-  --bg:#f3f4f8;--surface:#fff;--ink:#16182a;--muted:#555a73;--line:#d5d8e6;
+  --floor:#3b3e66;--void:#1f2138;--point:#f2f4ff;--pcb:#1d6fb8;--red:#d3222a;--wire:#f08a24;--ax-g:#35d07f;--ax-b:#6f86ff;
+  --bg:#2a2c4a;--surface:#34375a;--ink:#eceefb;--muted:#b4b9d8;--line:#4b4e7a;
   --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",sans-serif;--mono:"JetBrains Mono",Consolas,monospace;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1018;--surface:#191b2b;--ink:#eceefb;--muted:#a4a9c6;--line:#2b2e46;--pcb:#4a9be0}}
-:root[data-theme="dark"]{--bg:#0f1018;--surface:#191b2b;--ink:#eceefb;--muted:#a4a9c6;--line:#2b2e46;--pcb:#4a9be0}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.6 var(--body)}
@@ -20,7 +19,7 @@ h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
 a,button,input{outline-offset:3px}
 :focus-visible{outline:3px solid var(--wire)}
 .wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
-.note{background:var(--ink);color:var(--bg);padding:.7rem 1.25rem;font-size:.95rem}
+.note{background:var(--void);color:var(--ink);padding:.7rem 1.25rem;font-size:.95rem}
 .note b{font-family:var(--head)}
 /* hero */
 .hero{background:linear-gradient(var(--void) 0,var(--void) 38%,var(--floor) 100%);color:var(--point);position:relative;overflow:hidden}
@@ -30,7 +29,7 @@ a,button,input{outline-offset:3px}
   transform:perspective(420px) rotateX(58deg);transform-origin:top;pointer-events:none}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding-top:4rem;padding-bottom:4rem}
 .hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;letter-spacing:-.02em}
-.hero p{max-width:34rem;color:#c9cdea;margin:1rem 0 1.4rem}
+.hero p{max-width:34rem;color:#d3d7f0;margin:1rem 0 1.4rem}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
 .chips li{border-left:4px solid var(--pcb);background:rgba(255,255,255,.08);padding:.25rem .7rem;font-size:.95rem}
 .chips li:nth-child(2){border-color:var(--red)}.chips li:nth-child(3){border-color:var(--wire)}
@@ -96,10 +95,10 @@ section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
 <main>
 <section><div class="wrap">
   <h2>Palette from the real hardware</h2>
-  <p class="lede">The dark hero copies the 3D viewer: navy floor, white points, red/green/blue axes. Accents are the sensor board, the LaunchPad, and the servo wires.</p>
+  <p class="lede">One dark theme throughout. The hero copies the 3D viewer: navy floor, white points, red/green/blue axes. Accents are the sensor board, the LaunchPad, and the servo wires.</p>
   <ul class="sw">
-    <li><i style="background:#14151f"></i><span><b>Viewer void</b>#14151f</span></li>
-    <li><i style="background:#2f3150"></i><span><b>Viewer floor</b>#2f3150</span></li>
+    <li><i style="background:#1f2138"></i><span><b>Viewer void</b>#1f2138</span></li>
+    <li><i style="background:#3b3e66"></i><span><b>Page and floor</b>#2a2c4a to #3b3e66</span></li>
     <li><i style="background:#f2f4ff;border-bottom:1px solid #ccc"></i><span><b>Point white</b>#f2f4ff</span></li>
     <li><i style="background:#1d6fb8"></i><span><b>HC-SR04 blue</b>#1d6fb8</span></li>
     <li><i style="background:#d3222a"></i><span><b>LaunchPad red</b>#d3222a</span></li>
@@ -130,14 +129,15 @@ section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
 
 <section><div class="wrap">
   <h2>From angles to points</h2>
-  <p class="lede">The page opens on the static diagram. The button switches to the live viewer and back.</p>
+  <p class="lede">The page opens on the static diagram, drawn with faint 3D axes and floor and wall grids. The button switches to the live viewer and back.</p>
   <div class="panel">
     <div class="bar"><span>Spherical coordinates: distance and two angles give x, y, z</span><button class="btn" id="tog" type="button" aria-controls="viewer" aria-expanded="false">Start interactive viewer</button></div>
     <div class="stage" id="static">
-      <svg viewBox="0 0 360 200" role="img" aria-label="Diagram: a point at distance r, with tilt angle phi from the vertical axis and pan angle theta in the horizontal plane">
-        <g stroke="currentColor" fill="none" stroke-width="2" color="#555a73"><path d="M60 160 V20" /><path d="M60 160 L200 160" /><path d="M60 160 L20 185" /><path d="M60 160 L240 50" stroke="#f08a24" stroke-width="3"/><path d="M240 50 V138 L60 160" stroke-dasharray="5 5"/></g>
+      <svg viewBox="0 0 360 200" role="img" aria-label="Diagram: a point at distance r, with tilt angle phi from the vertical z axis and pan angle theta in the horizontal plane, drawn over a faint 3D grid">
+        <g id="grid" stroke="#fff" stroke-opacity=".13" stroke-width="1" fill="none"></g>
+        <g fill="none" stroke-width="2"><path d="M60 160 L200 160" stroke="#35d07f" stroke-opacity=".7"/><path d="M60 160 L20 185" stroke="#e0383f" stroke-opacity=".7"/><path d="M60 160 V20" stroke="#6f86ff" stroke-opacity=".7"/><path d="M60 160 L240 50" stroke="#f08a24" stroke-width="3"/><path d="M240 50 V138 L60 160" stroke="#b4b9d8" stroke-dasharray="5 5" stroke-width="1.5"/></g>
         <circle cx="240" cy="50" r="6" fill="#d3222a"/>
-        <g fill="currentColor" font-size="16" font-family="Atkinson Hyperlegible, sans-serif" color="#555a73"><text x="68" y="28">z</text><text x="206" y="166">y</text><text x="20" y="176">x</text><text x="140" y="94" fill="#f08a24">r</text><text x="248" y="48">(x, y, z)</text><text x="70" y="128">φ</text><text x="98" y="174">θ</text></g>
+        <g fill="#d3d7f0" font-size="16" font-family="Atkinson Hyperlegible, sans-serif"><text x="68" y="28">z</text><text x="206" y="166">y</text><text x="20" y="176">x</text><text x="140" y="94" fill="#f08a24">r</text><text x="248" y="48">(x, y, z)</text><text x="70" y="128">&#966;</text><text x="98" y="174">&#952;</text></g>
       </svg>
     </div>
     <div id="viewer" role="group" aria-label="Interactive viewer">
@@ -145,7 +145,7 @@ section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
       <div class="sl"><label for="tilt">Tilt φ</label><input id="tilt" type="range" min="0" max="180" value="60"><output id="to">60°</output></div>
       <div class="sl"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="140"><output id="do">140</output></div>
       <p class="out" id="xyz" aria-live="polite"></p>
-      <p style="color:#a4a9c6;margin:.6rem 0 0;font-size:.9rem">In the real build this panel gets a 3D scene (three.js, loaded only when you press the button).</p>
+      <p style="color:var(--muted);margin:.6rem 0 0;font-size:.9rem">In the real build this panel gets a 3D scene (three.js, loaded only when you press the button).</p>
     </div>
   </div>
 </div></section>
@@ -182,12 +182,16 @@ section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
   // favicon sizes
   var f=document.getElementById('fav'),d='';
   [[64,'64 px'],[32,'32 px'],[16,'16 px']].forEach(function(v){
-    d+='<figure><svg width="'+v[0]+'" height="'+v[0]+'" viewBox="0 0 64 64" role="img" aria-label="Favicon at '+v[1]+'"><rect width="64" height="64" rx="12" fill="#14151f"/>'+
+    d+='<figure><svg width="'+v[0]+'" height="'+v[0]+'" viewBox="0 0 64 64" role="img" aria-label="Favicon at '+v[1]+'"><rect width="64" height="64" rx="12" fill="#1f2138"/>'+
     [[22,-.15],[22,-.55],[22,-.95],[36,-.1],[36,-.45],[36,-.8],[36,-1.15],[50,-.05],[50,-.35],[50,-.65],[50,-.95],[50,-1.25]].map(function(q){
       return '<circle cx="'+(12+q[0]*Math.cos(q[1])).toFixed(1)+'" cy="'+(52+q[0]*Math.sin(q[1])).toFixed(1)+'" r="4" fill="#f2f4ff"/>';}).join('')+
-    '<circle cx="12" cy="52" r="6" fill="#1d6fb8"/></svg><figcaption>'+v[1]+'</figcaption></figure>';
+    '<path d="M12 52V45A7 7 0 0 1 18.06 55.5Z" fill="#e0383f"/><path d="M12 52L18.06 55.5A7 7 0 0 1 5.94 55.5Z" fill="#35d07f"/><path d="M12 52L5.94 55.5A7 7 0 0 1 12 45Z" fill="#6f86ff"/></svg><figcaption>'+v[1]+'</figcaption></figure>';
   });
   f.innerHTML=d;
+  // faint 3D grid for the static diagram
+  var g='',n;
+  for(n=0;n<=4;n++)g+='M'+(60-10*n)+' '+(160+6.25*n)+'h140'; for(n=0;n<=5;n++)g+='M'+(60+28*n)+' 160l-40 25M60 '+(160-28*n)+'h140M'+(60+28*n)+' 160v-140';
+  document.getElementById('grid').innerHTML='<path d="'+g+'"/>';
   // diagram toggle + readout
   var tog=document.getElementById('tog'),st=document.getElementById('static'),vw=document.getElementById('viewer');
   tog.addEventListener('click',function(){
