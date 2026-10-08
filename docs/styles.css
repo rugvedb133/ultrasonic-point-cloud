@@ -1,0 +1,84 @@
+/* Design tokens: colours come from the real hardware and our 3D viewer screenshot */
+:root {
+  --void: #1f2138;      /* viewer background */
+  --floor: #3b3e66;     /* viewer floor */
+  --bg: #2a2c4a;        /* page background */
+  --surface: #34375a;   /* cards and panels */
+  --line: #4b4e7a;
+  --ink: #eceefb;
+  --muted: #b4b9d8;
+  --point: #f2f4ff;     /* point-cloud white */
+  --pcb: #1d6fb8;       /* HC-SR04 board */
+  --red: #d3222a;       /* LaunchPad */
+  --wire: #f08a24;      /* servo wires */
+  --ax-x: #e0383f;
+  --ax-y: #35d07f;
+  --ax-z: #6f86ff;
+
+  --head: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.05rem/1.6 var(--body);
+}
+
+main { flex: 1; }
+
+h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; letter-spacing: -0.02em; }
+
+a { color: var(--ink); }
+img, svg, video { max-width: 100%; }
+
+.wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
+.lede { color: var(--muted); max-width: 40rem; margin: 1rem 0 0; }
+
+.site-header { background: var(--void); padding: 0.8rem 1.25rem; }
+.site-footer { background: var(--void); color: var(--muted); padding: 1.5rem 0; font-size: 0.9rem; }
+.site-footer p { margin: 0; }
+main > section { padding: 4rem 0; }
+
+/* Visible focus for keyboard users */
+:focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--wire);
+  color: var(--void);
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  z-index: 10;
+}
+.skip:focus { top: 1rem; }
+
+/* Wide content scrolls inside its own box, never the page */
+.scroll-x { overflow-x: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
