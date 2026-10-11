@@ -250,6 +250,36 @@
         </div>
       </div>
     </section>
+
+    <section class="reflection" id="reflection" aria-labelledby="reflection-title">
+      <div class="wrap">
+        <h2 id="reflection-title">What we learned</h2>
+        <p class="lede">The scanner works: it turns distances into a recognisable 3D shape. Most of what we learned is about why it is not sharper.</p>
+
+        <ul class="lessons">
+          <li>
+            <h3>The sensor sets the ceiling</h3>
+            <p>Ultrasound is far lower in frequency than the laser light a LIDAR uses, so it spreads more and every reading blurs over a wide area. We could polish the maths and the plotting all day. The sensor decided how sharp the result could be.</p>
+          </li>
+          <li>
+            <h3>We changed boards partway</h3>
+            <p>We started on an Arduino Uno for early sensor tests and servo calibration, then moved to the MSP430G2 LaunchPad as the main processor. It had the pins, memory and serial link we needed. The price was a second toolchain, Code Composer Studio instead of the Arduino IDE.</p>
+          </li>
+          <li>
+            <h3>Mechanics matter as much as electronics</h3>
+            <p>An angle error gets bigger the farther away the object is: one degree of wobble moves a point at 2 m by about 3.5 cm. We could not fix that in software, and the mount's stability is a limit on resolution.</p>
+          </li>
+          <li>
+            <h3>One sensor means a slow scan</h3>
+            <p>It takes one point at a time. Several sensors, each covering part of the sphere, would cut the scan time by a factor of however many we add.</p>
+          </li>
+        </ul>
+
+        <h3 class="sub">What we would try next</h3>
+        <p>A higher-frequency sensor would spread less, and several sensors on a custom mount would shorten the scan. These are the obvious next steps on picking up the project again.</p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
