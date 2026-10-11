@@ -52,9 +52,9 @@
           <h1 id="hero-title">A 3D scan from one ultrasonic sensor</h1>
           <p>We put a low-cost HC-SR04 on a two-servo pan/tilt mount, swept it across a scene, and turned every distance reading into a point in space.</p>
           <ul class="chips" aria-label="Main parts">
-            <li>HC-SR04 sensor</li>
-            <li>MSP430G2 LaunchPad</li>
-            <li>Python</li>
+            <li data-accent="blue">HC-SR04 sensor</li>
+            <li data-accent="red">MSP430G2 LaunchPad</li>
+            <li data-accent="orange">Python</li>
           </ul>
         </div>
         <div class="shots">
@@ -75,7 +75,7 @@
         <h2 id="stack-title">What is in the rig</h2>
         <p class="lede">Four off-the-shelf parts and three programs.</p>
         <ul class="cards">
-          <li class="card">
+          <li class="card" data-accent="blue">
             <object class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object>
             <div class="body">
               <h3>HC-SR04 sensor</h3>
@@ -83,7 +83,7 @@
               <dl><dt>Range</dt><dd>2 cm to 4 m</dd><dt>Supply</dt><dd>5 V, 15 mA</dd><dt>Beam</dt><dd>15°</dd><dt>Accuracy</dt><dd>up to 3 mm</dd></dl>
             </div>
           </li>
-          <li class="card">
+          <li class="card" data-accent="red">
             <object class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object>
             <div class="body">
               <h3>MSP430G2 LaunchPad</h3>
@@ -91,7 +91,7 @@
               <dl><dt>Chip</dt><dd>MSP430G2553</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>16 kB flash, 512 B SRAM</dd><dt>Extras</dt><dd>10-bit ADC, two 16-bit timers</dd></dl>
             </div>
           </li>
-          <li class="card">
+          <li class="card" data-accent="green">
             <object class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object>
             <div class="body">
               <h3>Arduino Uno</h3>
@@ -99,7 +99,7 @@
               <dl><dt>Chip</dt><dd>ATmega328P</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>32 kB flash, 2 kB SRAM</dd><dt>PWM</dt><dd>6 of 14 digital pins</dd></dl>
             </div>
           </li>
-          <li class="card">
+          <li class="card" data-accent="orange">
             <object class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object>
             <div class="body">
               <h3>Pan/tilt mount</h3>
@@ -161,7 +161,7 @@
             <div class="controls">
               <div class="slider"><label for="pan">Pan &theta;</label><input id="pan" type="range" min="0" max="360" value="40"><output id="pan-out" for="pan"></output></div>
               <div class="slider"><label for="tilt">Tilt &phi;</label><input id="tilt" type="range" min="0" max="180" value="60"><output id="tilt-out" for="tilt"></output></div>
-              <div class="slider"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="140"><output id="dist-out" for="dist"></output></div>
+              <div class="slider"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="200"><output id="dist-out" for="dist"></output></div>
               <p class="readout" id="xyz"></p>
               <div class="row">
                 <button class="btn alt" id="drop" type="button">Drop a point here</button>

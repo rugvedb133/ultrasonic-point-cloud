@@ -81,9 +81,7 @@ main > section { padding: 4rem 0; }
 .hero-copy p { color: #d3d7f0; margin: 1rem 0 1.4rem; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
-.chips li { border-left: 4px solid var(--pcb); background: rgba(255, 255, 255, 0.08); padding: 0.25rem 0.7rem; font-size: 0.95rem; }
-.chips li:nth-child(2) { border-color: var(--red); }
-.chips li:nth-child(3) { border-color: var(--wire); }
+.chips li { border-left: 4px solid; border-color: var(--accent, var(--line)); background: rgba(255, 255, 255, 0.08); padding: 0.25rem 0.7rem; font-size: 0.95rem; }
 
 .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
 .shots figure { margin: 0; border: 1px solid var(--line); background: var(--void); }
@@ -97,10 +95,7 @@ main > section { padding: 4rem 0; }
 .sub { font-size: 1.3rem; margin: 3rem 0 1rem; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.2rem; padding: 0; margin: 2rem 0 0; list-style: none; }
-.card { --accent: var(--pcb); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--accent); }
-.card:nth-child(2) { --accent: var(--red); }
-.card:nth-child(3) { --accent: var(--ax-y); }
-.card:nth-child(4) { --accent: var(--wire); }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-top: 6px solid; border-color: var(--line); border-top-color: var(--accent, var(--line)); }
 .card .art { display: block; width: 100%; aspect-ratio: 8 / 5; background: var(--void); color: var(--muted); }
 .card .body { padding: 1rem 1.1rem 1.2rem; }
 .card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
@@ -190,6 +185,12 @@ main > section { padding: 4rem 0; }
 .row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
 
 @media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
+
+/* Accent colours: set data-accent on an element, and rules that use var(--accent) pick it up */
+[data-accent="blue"] { --accent: var(--pcb); }
+[data-accent="red"] { --accent: var(--red); }
+[data-accent="green"] { --accent: var(--ax-y); }
+[data-accent="orange"] { --accent: var(--wire); }
 
 /* Visible focus for keyboard users */
 :focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
