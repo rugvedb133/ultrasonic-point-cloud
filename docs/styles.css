@@ -124,7 +124,9 @@ main > section { padding: 4rem 0; }
 .steps li { margin-bottom: 0.5rem; padding-left: 0.3rem; }
 .steps li::marker { color: var(--wire); font-weight: 700; }
 .diagram { margin: 0; }
+.diagram object,
 .diagram img { display: block; width: 100%; min-width: 38rem; height: auto; }
+.diagram object { aspect-ratio: 960 / 330; }
 .diagram figcaption, .small { color: var(--muted); font-size: 0.9rem; }
 .diagram figcaption { margin-top: 0.4rem; }
 .formula { margin: 1rem 0; }
@@ -134,7 +136,9 @@ main > section { padding: 4rem 0; }
 .panel .bar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); }
 .panel .bar p { margin: 0; }
 .stage { padding: 1rem; }
+.stage object,
 .stage img { display: block; width: 100%; max-width: 50rem; height: auto; margin: 0 auto; }
+.stage object { aspect-ratio: 2 / 1; }
 .msg { margin: 0; padding: 0.7rem 1rem; background: var(--void); border-bottom: 1px solid var(--line); color: var(--muted); max-width: none; }
 
 .btn { font: 700 0.95rem var(--body); background: var(--pcb); color: #fff; border: 2px solid var(--pcb); padding: 0.55rem 1.1rem; cursor: pointer; }
