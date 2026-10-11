@@ -225,6 +225,31 @@
         </figure>
       </div>
     </section>
+
+    <section class="results" id="results" aria-labelledby="results-title">
+      <div class="wrap">
+        <h2 id="results-title">What we got</h2>
+        <p class="lede">We scanned a water bottle standing in front of a flat surface.</p>
+
+        <figure class="video-fig">
+          <div class="video">
+            <iframe src="https://www.youtube-nocookie.com/embed/efCa1MFncBU?rel=0" title="Demo video: the rig scanning a water bottle" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption>The rig at work. <a href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a> if the player does not load.</figcaption>
+        </figure>
+
+        <div class="result-grid">
+          <figure class="result-fig">
+            <img src="images/point-cloud.png" alt="The scan as a point cloud: columns of white dots on a grid, with a curved cluster standing in front of straight columns." loading="lazy" decoding="async">
+            <figcaption>The point cloud from that scan.</figcaption>
+          </figure>
+          <div class="result-text">
+            <p>The shape is recognisable: the bottle comes out as a curved cluster of points, set apart from the flat surface behind it. It is not a smooth surface, though. The points sit in columns with gaps between them, and the edges are soft.</p>
+            <p>That is what the earlier sections predict. The resolution is bounded by the sensor's accuracy and the mount's stability, so a scan like this shows that one ultrasonic sensor can build a rough 3D map, not a precise one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
