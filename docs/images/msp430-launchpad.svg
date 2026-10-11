@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="240" height="150" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>MSP430G2 LaunchPad development board</title>
+  <rect x="30" y="10" width="184" height="130" rx="3" fill="#d3222a" stroke="#8f1218" stroke-width="2"><title>LaunchPad board</title></rect>
+  <g><title>Mini-USB connector: power and serial link to the PC</title>
+    <rect x="12" y="52" width="30" height="36" rx="2" fill="#b9bcc8" stroke="#7d8397"/><rect x="12" y="62" width="14" height="16" fill="#2a2c3a"/></g>
+  <g><title>Pin header (top)</title><rect x="68" y="16" width="128" height="10" fill="#14151f"/><path d="M72 21H192" stroke="#8a8fa4" stroke-width="5" stroke-dasharray="3 9"/></g>
+  <g><title>Pin header (bottom)</title><rect x="68" y="124" width="128" height="10" fill="#14151f"/><path d="M72 129H192" stroke="#8a8fa4" stroke-width="5" stroke-dasharray="3 9"/></g>
+  <g><title>MSP430G2553 microcontroller (20-pin DIP)</title>
+    <rect x="96" y="54" width="86" height="32" rx="2" fill="#1c1d2a" stroke="#555a73"/>
+    <path d="M100 51H178M100 89H178" stroke="#b9bcc8" stroke-width="4" stroke-dasharray="3 5.6"/>
+    <path d="M96 64a5 5 0 0 1 0 12" fill="#d3222a"/>
+    <text x="139" y="74" fill="#e8eaf5" font-family="sans-serif" font-size="8" text-anchor="middle">MSP430</text></g>
+  <g><title>Reset button</title><rect x="190" y="38" width="14" height="14" rx="2" fill="#b9bcc8" stroke="#7d8397"/><circle cx="197" cy="45" r="4" fill="#2a2c3a"/></g>
+  <g><title>User button</title><rect x="190" y="88" width="14" height="14" rx="2" fill="#b9bcc8" stroke="#7d8397"/><circle cx="197" cy="95" r="4" fill="#2a2c3a"/></g>
+</svg>

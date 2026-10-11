@@ -45,9 +45,6 @@
   </header>
 
   <main id="main">
-    <section class="wrap">
-      <h1>Point cloud from an ultrasonic sensor</h1>
-    </section>
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <img class="axes" src="images/axes.svg" alt="" width="56" height="56">
@@ -70,6 +67,54 @@
             <figcaption>A cylindrical object in front of a flat surface, as the rig saw it.</figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+
+    <section class="stack" id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <h2 id="stack-title">What is in the rig</h2>
+        <p class="lede">Four off-the-shelf parts and three programs.</p>
+        <ul class="cards">
+          <li class="card">
+            <object class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object>
+            <div class="body">
+              <h3>HC-SR04 sensor</h3>
+              <p>The cheap part, and the main reason our scans are approximate. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
+              <dl><dt>Range</dt><dd>2 cm to 4 m</dd><dt>Supply</dt><dd>5 V, 15 mA</dd><dt>Beam</dt><dd>15°</dd><dt>Accuracy</dt><dd>up to 3 mm</dd></dl>
+            </div>
+          </li>
+          <li class="card">
+            <object class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object>
+            <div class="body">
+              <h3>MSP430G2 LaunchPad</h3>
+              <p>The main processor. It had enough pins and memory to hold the readings, and a serial link to send them to the PC.</p>
+              <dl><dt>Chip</dt><dd>MSP430G2553</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>16 kB flash, 512 B SRAM</dd><dt>Extras</dt><dd>10-bit ADC, two 16-bit timers</dd></dl>
+            </div>
+          </li>
+          <li class="card">
+            <object class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object>
+            <div class="body">
+              <h3>Arduino Uno</h3>
+              <p>Used for early sensor tests and for calibrating the servos.</p>
+              <dl><dt>Chip</dt><dd>ATmega328P</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>32 kB flash, 2 kB SRAM</dd><dt>PWM</dt><dd>6 of 14 digital pins</dd></dl>
+            </div>
+          </li>
+          <li class="card">
+            <object class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object>
+            <div class="body">
+              <h3>Pan/tilt mount</h3>
+              <p>Two micro servos in a kit. The lower one pans, the upper one tilts, and PWM pulses from the board set the angles. Its wobble limits how sharp a scan can be.</p>
+              <dl><dt>Pan</dt><dd>360°</dd><dt>Tilt</dt><dd>180°</dd><dt>Control</dt><dd>PWM pulses</dd><dt>Servos</dt><dd>two 9 g micro</dd></dl>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="sub">Software</h3>
+        <ul class="tools">
+          <li><strong>Code Composer Studio</strong><span>Firmware for the MSP430, written in embedded C.</span></li>
+          <li><strong>Arduino IDE</strong><span>Early sensor tests and servo calibration on the Uno.</span></li>
+          <li><strong>Python</strong><span>Turns each distance and its two angles into x, y, z, then plots the points.</span></li>
+        </ul>
       </div>
     </section>
   </main>

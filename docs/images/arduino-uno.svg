@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="240" height="150" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Arduino Uno board</title>
+  <rect x="20" y="14" width="204" height="122" rx="6" fill="#0e8a94" stroke="#0a5f66" stroke-width="2"><title>Arduino Uno board</title></rect>
+  <g><title>USB-B connector: power and serial link to the PC</title><rect x="6" y="28" width="42" height="34" rx="2" fill="#b9bcc8" stroke="#7d8397"/><rect x="6" y="36" width="22" height="18" fill="#2a2c3a"/></g>
+  <g><title>DC power jack</title><rect x="6" y="90" width="36" height="32" rx="2" fill="#14151f" stroke="#555a73"/></g>
+  <g><title>Digital pin header (0 to 13)</title><rect x="68" y="16" width="148" height="10" fill="#14151f"/><path d="M72 21H212" stroke="#8a8fa4" stroke-width="5" stroke-dasharray="4 5"/></g>
+  <g><title>Power header</title><rect x="104" y="124" width="52" height="10" fill="#14151f"/><path d="M108 129H152" stroke="#8a8fa4" stroke-width="5" stroke-dasharray="4 5"/></g>
+  <g><title>Analog input header (A0 to A5)</title><rect x="164" y="124" width="52" height="10" fill="#14151f"/><path d="M168 129H212" stroke="#8a8fa4" stroke-width="5" stroke-dasharray="4 5"/></g>
+  <g><title>ATmega328P microcontroller</title>
+    <rect x="102" y="86" width="100" height="24" rx="2" fill="#1c1d2a" stroke="#555a73"/>
+    <path d="M106 84H198M106 112H198" stroke="#b9bcc8" stroke-width="3" stroke-dasharray="3 3.9"/></g>
+  <g><title>Reset button</title><rect x="64" y="38" width="14" height="14" rx="2" fill="#d3222a" stroke="#8f1218"/></g>
+  <circle cx="140" cy="56" r="18" fill="none" stroke="#e8eaf5" stroke-width="2.5"/>
+  <text x="140" y="60" fill="#e8eaf5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">UNO</text>
+</svg>

@@ -92,6 +92,29 @@ main > section { padding: 4rem 0; }
 
 .soon { padding-top: 2rem; padding-bottom: 2rem; }
 
+/* Stack section */
+.stack { border-top: 1px solid var(--line); }
+.stack h2 { font-size: 1.9rem; }
+.sub { font-size: 1.3rem; margin: 3rem 0 1rem; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.2rem; padding: 0; margin: 2rem 0 0; list-style: none; }
+.card { --accent: var(--pcb); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--accent); }
+.card:nth-child(2) { --accent: var(--red); }
+.card:nth-child(3) { --accent: var(--ax-y); }
+.card:nth-child(4) { --accent: var(--wire); }
+.card .art { display: block; width: 100%; aspect-ratio: 8 / 5; background: var(--void); color: var(--muted); }
+.card .body { padding: 1rem 1.1rem 1.2rem; }
+.card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+.card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.card dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.9rem; margin: 0.9rem 0 0; font-size: 0.9rem; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; font-family: var(--mono); font-size: 0.82rem; }
+
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; padding: 0; margin: 0; list-style: none; }
+.tools li { border-left: 4px solid var(--line); padding: 0.2rem 0 0.2rem 1rem; }
+.tools strong { display: block; font-family: var(--head); font-size: 1.1rem; }
+.tools span { color: var(--muted); }
+
 /* Visible focus for keyboard users */
 :focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
 

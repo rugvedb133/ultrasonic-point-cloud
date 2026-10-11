@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="240" height="150" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Two-servo pan and tilt mount</title>
+  <g><title>Base plate</title><rect x="46" y="126" width="136" height="10" rx="2" fill="#3a3c4a" stroke="#6a6e86"/><circle cx="58" cy="131" r="2.5" fill="#1f2138"/><circle cx="170" cy="131" r="2.5" fill="#1f2138"/></g>
+  <g><title>Pan servo (lower): rotates the whole mount</title>
+    <rect x="76" y="98" width="78" height="6" rx="1" fill="#1d4aa8"/><rect x="88" y="86" width="54" height="40" rx="3" fill="#2f6fe0" stroke="#1d4aa8" stroke-width="2"/><circle cx="115" cy="82" r="8" fill="#e8eaf5" stroke="#8a8fa4"/></g>
+  <g><title>Turntable and bracket</title><rect x="92" y="70" width="46" height="8" rx="1" fill="#3a3c4a" stroke="#6a6e86"/>
+    <rect x="94" y="38" width="7" height="34" fill="#3a3c4a" stroke="#6a6e86"/><rect x="129" y="38" width="7" height="34" fill="#3a3c4a" stroke="#6a6e86"/></g>
+  <g><title>Tilt servo (upper): swings the sensor up and down</title>
+    <rect x="100" y="36" width="34" height="26" rx="3" fill="#2f6fe0" stroke="#1d4aa8" stroke-width="2"/><circle cx="148" cy="49" r="7" fill="#e8eaf5" stroke="#8a8fa4"/></g>
+  <g><title>Sensor bracket: where the ultrasonic sensor attaches</title><rect x="156" y="30" width="9" height="38" rx="1" fill="#3a3c4a" stroke="#6a6e86"/></g>
+  <g fill="none" stroke-width="3" stroke-linecap="round"><title>Servo wires (signal, power, ground)</title>
+    <path d="M100 46C66 38 54 74 84 98" stroke="#f08a24"/><path d="M100 50C70 44 60 76 86 100" stroke="#d3222a"/><path d="M100 54C74 50 66 78 88 102" stroke="#8a5a2b"/>
+    <path d="M88 112C60 112 52 124 42 128" stroke="#f08a24"/></g>
+</svg>
