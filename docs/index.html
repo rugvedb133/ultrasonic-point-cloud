@@ -174,11 +174,41 @@
       </div>
     </section>
 
+    <section class="mount" id="mount" aria-labelledby="mount-title">
+      <div class="wrap">
+        <h2 id="mount-title">The mount and wiring</h2>
+        <p class="lede">Everything that moves is two micro servos in a pan/tilt kit. Everything that decides is the board.</p>
+
+        <div class="mount-grid">
+          <figure class="mount-fig">
+            <object class="mount-art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."><img src="images/pan-tilt-mount.svg" width="480" height="300" alt="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."></object>
+            <figcaption>A drawing of the kit we used, not a photo of our build.</figcaption>
+          </figure>
+          <div>
+            <dl class="spec">
+              <dt>Pan</dt><dd>The lower servo turns the whole mount through 360&deg;, covering the horizontal plane.</dd>
+              <dt>Tilt</dt><dd>The upper servo swings the sensor through 180&deg; vertically.</dd>
+              <dt>Control</dt><dd>The board sends PWM pulses, and the pulse width sets the angle.</dd>
+            </dl>
+            <p class="small">We calibrated the servos on the Arduino Uno first, so we knew what angle each pulse width gave before moving to the LaunchPad.</p>
+          </div>
+        </div>
+
+        <h3 class="sub">What connects to what</h3>
+        <ul class="tools">
+          <li><strong>Power</strong><span>One supply feeds the board, the sensor and the servos.</span></li>
+          <li><strong>Servos</strong><span>Three wires each: signal, power and ground. The signal wire carries the PWM pulses from the board.</span></li>
+          <li><strong>Sensor</strong><span>The board triggers the HC-SR04 and times its echo to get a distance.</span></li>
+          <li><strong>PC</strong><span>The readings and both angles leave the board over a serial link.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="scan" id="scan" aria-labelledby="scan-title">
       <div class="wrap">
         <h2 id="scan-title">Sweeping the scene</h2>
         <p class="lede">The mount does the looking. At each angle, the sensor answers one question: how far away is the nearest thing?</p>
-        <p>The lower servo pans the sensor around and the upper one tilts it up and down. The board sets both angles with PWM pulses, takes a reading at each position, and logs it along with the two angles. After several sweeps in both directions, the readings add up to a map of the scene.</p>
+        <p>At each position the board takes a reading and logs it along with the two angles. After several sweeps in both directions, the readings add up to a map of the scene.</p>
 
         <h3 class="sub">Why the result is approximate</h3>
         <ul class="tools">

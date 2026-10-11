@@ -128,6 +128,16 @@ main > section { padding: 4rem 0; }
 .diagram object { aspect-ratio: 960 / 330; }
 .diagram figcaption, .small { color: var(--muted); font-size: 0.9rem; }
 .diagram figcaption { margin-top: 0.4rem; }
+.mount { border-top: 1px solid var(--line); }
+.mount h2 { font-size: 1.9rem; }
+.mount-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; align-items: center; margin-top: 2rem; }
+.mount-fig { margin: 0; }
+.mount-art { display: block; width: 100%; aspect-ratio: 8 / 5; background: var(--void); border: 1px solid var(--line); }
+.mount-fig figcaption { margin-top: 0.4rem; color: var(--muted); font-size: 0.9rem; }
+.spec { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem 1.2rem; margin: 0; }
+.spec dt { font-family: var(--head); font-weight: 700; color: var(--wire); }
+.spec dd { margin: 0; }
+@media (max-width: 760px) { .mount-grid { grid-template-columns: 1fr; } }
 .beam object { aspect-ratio: 800 / 300; }
 .scan { border-top: 1px solid var(--line); }
 .scan h2 { font-size: 1.9rem; }
