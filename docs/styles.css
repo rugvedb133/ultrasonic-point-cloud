@@ -57,6 +57,41 @@ img, svg, video { max-width: 100%; }
 .site-footer p { margin: 0; }
 main > section { padding: 4rem 0; }
 
+/* Hero: dark viewer look, grid floor like our 3D viewer */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(var(--void) 0, var(--void) 30%, var(--floor) 100%);
+  color: var(--point);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 30% 0 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 36px);
+  transform: perspective(420px) rotateX(58deg);
+  transform-origin: top;
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.axes { display: block; margin-bottom: 1.2rem; }
+.hero-copy { max-width: 40rem; }
+.hero-copy p { color: #d3d7f0; margin: 1rem 0 1.4rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+.chips li { border-left: 4px solid var(--pcb); background: rgba(255, 255, 255, 0.08); padding: 0.25rem 0.7rem; font-size: 0.95rem; }
+.chips li:nth-child(2) { border-color: var(--red); }
+.chips li:nth-child(3) { border-color: var(--wire); }
+
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+.shots figure { margin: 0; border: 1px solid var(--line); background: var(--void); }
+.shots img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.shots figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.9rem; }
+
+.soon { padding-top: 2rem; padding-bottom: 2rem; }
+
 /* Visible focus for keyboard users */
 :focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
 

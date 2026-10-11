@@ -48,6 +48,30 @@
     <section class="wrap">
       <h1>Point cloud from an ultrasonic sensor</h1>
     </section>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <img class="axes" src="images/axes.svg" alt="" width="56" height="56">
+        <div class="hero-copy">
+          <h1 id="hero-title">A 3D scan from one ultrasonic sensor</h1>
+          <p>We put a low-cost HC-SR04 on a two-servo pan/tilt mount, swept it across a scene, and turned every distance reading into a point in space.</p>
+          <ul class="chips" aria-label="Main parts">
+            <li>HC-SR04 sensor</li>
+            <li>MSP430G2 LaunchPad</li>
+            <li>Python</li>
+          </ul>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="images/rig.jpg" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
+            <figcaption>The assembled rig.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/point-cloud.png" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
+            <figcaption>A cylindrical object in front of a flat surface, as the rig saw it.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
