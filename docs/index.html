@@ -117,6 +117,58 @@
         </ul>
       </div>
     </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title">How a distance becomes a point</h2>
+        <p class="lede">One reading gives us one point. A scan is many of them, taken at different angles.</p>
+
+        <ol class="steps">
+          <li>The sensor sends an ultrasonic pulse and times the echo. That gives a distance, r.</li>
+          <li>The microcontroller records r together with the two servo angles at that moment.</li>
+          <li>It sends those numbers to the PC over a serial link.</li>
+          <li>A Python script turns each reading into an x, y, z point and plots it.</li>
+          <li>The servos step to the next angle and the cycle repeats. After several sweeps in both directions, the points add up to a map of the scene.</li>
+        </ol>
+
+        <figure class="diagram">
+          <div class="scroll-x">
+            <img src="images/block-diagram.svg" width="960" height="330" loading="lazy" alt="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
+          </div>
+          <figcaption>The whole system on one page.</figcaption>
+        </figure>
+
+        <h3 class="sub">From angles to x, y, z</h3>
+        <p>The sensor only knows distance. The angles come from the servos. Treat the sensor as sitting at the origin, with tilt &phi; measured from the vertical and pan &theta; measured around it. Then:</p>
+        <p class="formula"><code>x = r &middot; sin &phi; &middot; cos &theta;<br>y = r &middot; sin &phi; &middot; sin &theta;<br>z = r &middot; cos &phi;</code></p>
+        <p class="small">This is the standard convention. Where the zero positions sit on the real rig depends on how the servos were mounted.</p>
+
+        <div class="panel">
+          <div class="bar">
+            <p id="panel-title">Sensor at the origin: distance r, tilt &phi;, pan &theta;</p>
+            <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
+          </div>
+          <p class="msg" id="viewer-msg" role="status" hidden></p>
+          <div class="stage" id="coords-static">
+            <img src="images/spherical-coords.svg" width="800" height="400" loading="lazy" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
+          </div>
+          <div class="viewer" id="coords-viewer" hidden>
+            <div class="scene" id="scene"></div>
+            <div class="controls">
+              <div class="slider"><label for="pan">Pan &theta;</label><input id="pan" type="range" min="0" max="360" value="40"><output id="pan-out" for="pan"></output></div>
+              <div class="slider"><label for="tilt">Tilt &phi;</label><input id="tilt" type="range" min="0" max="180" value="60"><output id="tilt-out" for="tilt"></output></div>
+              <div class="slider"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="140"><output id="dist-out" for="dist"></output></div>
+              <p class="readout" id="xyz"></p>
+              <div class="row">
+                <button class="btn alt" id="drop" type="button">Drop a point here</button>
+                <button class="btn alt" id="clear" type="button">Clear points</button>
+              </div>
+              <p class="small">Drop a few points at different angles and you are building a tiny point cloud. Drag the scene, or focus it and use the arrow keys, to look around.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

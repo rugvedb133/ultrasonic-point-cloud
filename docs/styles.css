@@ -115,6 +115,48 @@ main > section { padding: 4rem 0; }
 .tools strong { display: block; font-family: var(--head); font-size: 1.1rem; }
 .tools span { color: var(--muted); }
 
+/* How it works */
+[hidden] { display: none !important; }
+.how { border-top: 1px solid var(--line); }
+.how h2 { font-size: 1.9rem; }
+.how p { max-width: 42rem; }
+.steps { max-width: 42rem; padding-left: 1.4rem; margin: 1.6rem 0 2rem; }
+.steps li { margin-bottom: 0.5rem; padding-left: 0.3rem; }
+.steps li::marker { color: var(--wire); font-weight: 700; }
+.diagram { margin: 0; }
+.diagram img { display: block; width: 100%; min-width: 38rem; height: auto; }
+.diagram figcaption, .small { color: var(--muted); font-size: 0.9rem; }
+.diagram figcaption { margin-top: 0.4rem; }
+.formula { margin: 1rem 0; }
+.formula code { display: inline-block; font: 1.05rem/1.7 var(--mono); background: var(--void); padding: 0.8rem 1.2rem; border-left: 4px solid var(--wire); }
+
+.panel { margin-top: 2rem; border: 1px solid var(--line); background: var(--surface); }
+.panel .bar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); }
+.panel .bar p { margin: 0; }
+.stage { padding: 1rem; }
+.stage img { display: block; width: 100%; max-width: 50rem; height: auto; margin: 0 auto; }
+.msg { margin: 0; padding: 0.7rem 1rem; background: var(--void); border-bottom: 1px solid var(--line); color: var(--muted); max-width: none; }
+
+.btn { font: 700 0.95rem var(--body); background: var(--pcb); color: #fff; border: 2px solid var(--pcb); padding: 0.55rem 1.1rem; cursor: pointer; }
+.btn:hover { filter: brightness(1.15); }
+.btn:disabled { opacity: 0.6; cursor: progress; }
+.btn.alt { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.alt:hover { border-color: var(--muted); filter: none; }
+
+.viewer { display: grid; grid-template-columns: 1.4fr 1fr; background: var(--void); }
+.scene { position: relative; min-height: 16rem; aspect-ratio: 16 / 10; }
+.scene canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+.scene canvas:active { cursor: grabbing; }
+.controls { padding: 1rem 1.2rem; background: var(--surface); }
+.controls p { margin: 0.8rem 0 0; max-width: none; }
+.slider { display: grid; grid-template-columns: 6rem 1fr 4.5rem; gap: 0.7rem; align-items: center; margin: 0.6rem 0; }
+.slider input { width: 100%; accent-color: var(--wire); }
+.slider output { font-family: var(--mono); font-size: 0.85rem; text-align: right; }
+.readout { font-family: var(--mono); color: var(--ax-y); font-size: 0.9rem; }
+.row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+
+@media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
+
 /* Visible focus for keyboard users */
 :focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
 
