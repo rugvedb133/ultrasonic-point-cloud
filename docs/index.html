@@ -134,8 +134,8 @@
         <figure class="diagram">
           <div class="scroll-x">
             <object data="images/block-diagram.svg" type="image/svg+xml" width="960" height="330" role="img" aria-label="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
-            <img src="images/block-diagram.svg" width="960" height="330" loading="lazy" alt="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
-          </object>
+              <img src="images/block-diagram.svg" width="960" height="330" alt="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
+            </object>
           </div>
           <figcaption>The whole system on one page.</figcaption>
         </figure>
@@ -153,7 +153,7 @@
           <p class="msg" id="viewer-msg" role="status" hidden></p>
           <div class="stage" id="coords-static">
             <object data="images/spherical-coords.svg" type="image/svg+xml" width="800" height="400" role="img" aria-label="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
-            <img src="images/spherical-coords.svg" width="800" height="400" loading="lazy" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
+              <img src="images/spherical-coords.svg" width="800" height="400" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
             </object>
           </div>
           <div class="viewer" id="coords-viewer" hidden>
@@ -171,6 +171,28 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="scan" id="scan" aria-labelledby="scan-title">
+      <div class="wrap">
+        <h2 id="scan-title">Sweeping the scene</h2>
+        <p class="lede">The mount does the looking. At each angle, the sensor answers one question: how far away is the nearest thing?</p>
+        <p>The lower servo pans the sensor around and the upper one tilts it up and down. The board sets both angles with PWM pulses, takes a reading at each position, and logs it along with the two angles. After several sweeps in both directions, the readings add up to a map of the scene.</p>
+
+        <h3 class="sub">Why the result is approximate</h3>
+        <ul class="tools">
+          <li><strong>A wide beam</strong><span>The HC-SR04 does not look at a point. Each reading covers a cone, so fine detail smaller than the beam gets blurred together.</span></li>
+          <li><strong>A wobbly mount</strong><span>Our report names the mount's stability, along with the sensor's accuracy, as the limit on resolution. Two small servos in a kit can only hold an angle so well.</span></li>
+          <li><strong>One point at a time</strong><span>With a single sensor, a scan takes a while. Several sensors, each covering part of the sphere, would cut the time by a factor of however many we add.</span></li>
+        </ul>
+
+        <figure class="diagram beam">
+          <div class="scroll-x">
+            <object data="images/beam-spread.svg" type="image/svg+xml" width="800" height="300" role="img" aria-label="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."><img src="images/beam-spread.svg" width="800" height="300" alt="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."></object>
+          </div>
+          <figcaption>The 15&deg; beam from above, drawn to scale. Widths assume 15&deg; is the full cone angle.</figcaption>
+        </figure>
       </div>
     </section>
   </main>

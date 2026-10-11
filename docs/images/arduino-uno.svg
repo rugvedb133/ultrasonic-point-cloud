@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" xmlns:c2pa="http://c2pa.org/manifest">
+<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" xmlns:c2pa="http://c2pa.org/manifest">
   <title>Arduino Uno board</title>
 <defs><linearGradient id="sh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
 <linearGradient id="mt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e8f0"/><stop offset=".5" stop-color="#9aa0b4"/><stop offset="1" stop-color="#d4d7e2"/></linearGradient>
