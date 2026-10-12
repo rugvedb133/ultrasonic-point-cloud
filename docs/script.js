@@ -215,15 +215,15 @@
   var caption = document.getElementById('lightbox-caption');
   var containers = Array.prototype.slice.call(document.querySelectorAll('[data-target]'));
 
-  // A click inside an <object> never reaches the page, so every container also gets a real button.
-  // Added here, not in the HTML, so there is no dead button without JavaScript.
+  // A click inside an <object> never reaches the page, so every container also gets a real button,
+  // placed in its caption. Added here, not in the HTML, so there is no dead button without JavaScript.
   containers.forEach(function (box) {
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'enlarge';
     btn.textContent = 'Enlarge';
     btn.setAttribute('aria-label', 'Enlarge ' + (box.dataset.label || 'this image'));
-    box.appendChild(btn);
+    (box.querySelector('figcaption') || box).appendChild(btn);
   });
 
   function open(box) {
@@ -240,8 +240,14 @@
     }
 
     var cap = box.querySelector('figcaption');
-    caption.textContent = cap ? cap.textContent : '';
-    caption.hidden = !cap;
+    var text = '';
+    if (cap) {
+      var copy = cap.cloneNode(true);
+      Array.prototype.forEach.call(copy.querySelectorAll('.enlarge'), function (b) { b.remove(); });
+      text = copy.textContent.replace(/\s+/g, ' ').trim();
+    }
+    caption.textContent = text;
+    caption.hidden = !text;
     dlg.setAttribute('aria-label', target.getAttribute('alt') || target.getAttribute('aria-label') || 'Enlarged view');
 
     body.replaceChildren(clone);

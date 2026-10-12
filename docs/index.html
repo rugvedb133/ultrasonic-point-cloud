@@ -83,7 +83,7 @@
         <p class="lede">Four off-the-shelf parts and three programs.</p>
         <ul class="cards">
           <li class="card" data-accent="blue">
-            <div class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing"><object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object></div>
+            <figure class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing"><object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object><figcaption>Drawing of the sensor module.</figcaption></figure>
             <div class="body">
               <h3>HC-SR04 sensor</h3>
               <p>The cheap part, and the main reason our scans are approximate. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
@@ -91,7 +91,7 @@
             </div>
           </li>
           <li class="card" data-accent="red">
-            <div class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing"><object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object></div>
+            <figure class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing"><object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object><figcaption>Drawing of the LaunchPad.</figcaption></figure>
             <div class="body">
               <h3>MSP430G2 LaunchPad</h3>
               <p>The main processor. It had enough pins and memory to hold the readings, and a serial link to send them to the PC.</p>
@@ -99,7 +99,7 @@
             </div>
           </li>
           <li class="card" data-accent="green">
-            <div class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing"><object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object></div>
+            <figure class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing"><object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object><figcaption>Drawing of the Uno.</figcaption></figure>
             <div class="body">
               <h3>Arduino Uno</h3>
               <p>Used for early sensor tests and for calibrating the servos.</p>
@@ -107,7 +107,7 @@
             </div>
           </li>
           <li class="card" data-accent="orange">
-            <div class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing"><object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object></div>
+            <figure class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing"><object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object><figcaption>Drawing of the pan/tilt kit.</figcaption></figure>
             <div class="body">
               <h3>Pan/tilt mount</h3>
               <p>Two micro servos in a kit. The lower one pans, the upper one tilts, and PWM pulses from the board set the angles. Its wobble limits how sharp a scan can be.</p>
@@ -158,11 +158,11 @@
             <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
           </div>
           <p class="msg" id="viewer-msg" role="status" hidden></p>
-          <div class="stage" id="coords-static" data-target="obj-spherical" data-label="the coordinates diagram">
+          <figure class="stage" id="coords-static" data-target="obj-spherical" data-label="the coordinates diagram">
             <object id="obj-spherical" data="images/spherical-coords.svg" type="image/svg+xml" width="800" height="400" role="img" aria-label="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
               <img src="images/spherical-coords.svg" width="800" height="400" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
             </object>
-          </div>
+          <figcaption>Static diagram: a point at distance r, with tilt &phi; and pan &theta;.</figcaption></figure>
           <div class="viewer" id="coords-viewer" hidden>
             <div class="scene" id="scene"></div>
             <div class="controls">
