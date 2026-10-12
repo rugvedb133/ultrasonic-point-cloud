@@ -60,8 +60,8 @@
           <p>We put a low-cost HC-SR04 on a two-servo pan/tilt mount, swept it across a scene, and turned every distance reading into a point in space.</p>
           <ul class="chips" aria-label="Main parts">
             <li data-accent="blue">HC-SR04 sensor</li>
-            <li data-accent="red">MSP430G2 LaunchPad</li>
-            <li data-accent="orange">Python</li>
+            <li class="tool-logo" data-accent="red" data-tool="ti">MSP430G2 LaunchPad</li>
+            <li class="tool-logo" data-accent="orange" data-tool="python">Python</li>
           </ul>
         </div>
         <div class="shots">
@@ -90,18 +90,18 @@
               <dl><dt>Range</dt><dd>2 cm to 4 m</dd><dt>Supply</dt><dd>5 V, 15 mA</dd><dt>Beam</dt><dd>15°</dd><dt>Accuracy</dt><dd>up to 3 mm</dd></dl>
             </div>
           </li>
-          <li class="card" data-accent="red">
+          <li class="card" data-accent="red" data-tool="ti">
             <figure class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing"><object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object><figcaption>Drawing of the LaunchPad.</figcaption></figure>
             <div class="body">
-              <h3>MSP430G2 LaunchPad</h3>
+              <h3 class="tool-logo">MSP430G2 LaunchPad</h3>
               <p>The main processor. It had enough pins and memory to hold the readings, and a serial link to send them to the PC.</p>
               <dl><dt>Chip</dt><dd>MSP430G2553</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>16 kB flash, 512 B SRAM</dd><dt>Extras</dt><dd>10-bit ADC, two 16-bit timers</dd></dl>
             </div>
           </li>
-          <li class="card" data-accent="green">
+          <li class="card" data-accent="green" data-tool="arduino">
             <figure class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing"><object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object><figcaption>Drawing of the Uno.</figcaption></figure>
             <div class="body">
-              <h3>Arduino Uno</h3>
+              <h3 class="tool-logo">Arduino Uno</h3>
               <p>Used for early sensor tests and for calibrating the servos.</p>
               <dl><dt>Chip</dt><dd>ATmega328P</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>32 kB flash, 2 kB SRAM</dd><dt>PWM</dt><dd>6 of 14 digital pins</dd></dl>
             </div>
@@ -118,9 +118,9 @@
 
         <h3 class="sub">Software</h3>
         <ul class="tools">
-          <li><strong>Code Composer Studio</strong><span>Firmware for the MSP430, written in embedded C.</span></li>
-          <li><strong>Arduino IDE</strong><span>Early sensor tests and servo calibration on the Uno.</span></li>
-          <li><strong>Python</strong><span>Turns each distance and its two angles into x, y, z, then plots the points.</span></li>
+          <li data-tool="ccs"><strong class="tool-logo">Code Composer Studio</strong><span>Firmware for the MSP430, written in embedded C.</span></li>
+          <li data-tool="arduino"><strong class="tool-logo">Arduino IDE</strong><span>Early sensor tests and servo calibration on the Uno.</span></li>
+          <li data-tool="python"><strong class="tool-logo">Python</strong><span>Turns each distance and its two angles into x, y, z, then plots the points.</span></li>
         </ul>
       </div>
     </section>
@@ -156,8 +156,8 @@
           <div class="bar">
             <p id="panel-title">Sensor at the origin: distance r, tilt &phi;, pan &theta;</p>
             <div class="bar-actions">
-            <button class="btn alt" id="viewer-enlarge" type="button" hidden>Enlarge viewer</button>
-            <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
+              <button class="btn alt" id="viewer-enlarge" type="button" hidden>Enlarge viewer</button>
+              <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
             </div>
           </div>
           <p class="msg" id="viewer-msg" role="status" hidden></p>
@@ -246,7 +246,7 @@
           <div class="video" id="video-box">
             <iframe src="https://www.youtube-nocookie.com/embed/efCa1MFncBU?rel=0" title="Demo video: the rig scanning a water bottle" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <figcaption>The rig at work. <a href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a> if the player does not load.</figcaption>
+          <figcaption>The rig at work. <a class="tool-logo" data-tool="youtube" href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a> if the player does not load.</figcaption>
         </figure>
 
         <div class="result-grid">

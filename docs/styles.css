@@ -200,6 +200,33 @@ main > section { padding: 4rem 0; }
 
 @media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
 
+/* Tool logos.
+   The element with .tool-logo gets a small icon after its text, drawn as a mask so it follows the text colour
+   and switches to the brand colour (--color) on hover. data-tool picks the icon: it can sit on the same
+   element or on a parent, because custom properties inherit.
+   Icons come from Simple Icons through jsDelivr (pinned version). Nothing is hosted here. */
+.tool-logo[data-tool]::after,
+[data-tool] .tool-logo::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.4em;
+  vertical-align: -0.12em;
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+  transition: background-color 0.2s;
+}
+.tool-logo:hover::after { background-color: var(--color, currentColor); }
+
+[data-tool="python"] { --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/python.svg"); --color: #3776ab; }
+[data-tool="arduino"] { --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/arduino.svg"); --color: #00878f; }
+[data-tool="youtube"] { --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/youtube.svg"); --color: #ff0000; }
+/* Simple Icons no longer has a Texas Instruments logo, so these two point at ti.com */
+[data-tool="ti"] { --logo: url("https://www.ti.com/favicon.svg"); --color: #cc0000; }
+[data-tool="ccs"] { --logo: url("https://www.ti.com/content/dam/ticom/images/icons/ui-icon-color/ccstudio-ide-red.svg"); --color: #cc0000; }
+
 /* Lightbox */
 [data-target] { cursor: zoom-in; }
 .enlarge { margin-left: 0.6rem; padding: 0.2rem 0.6rem; font: 700 0.85rem var(--body); white-space: nowrap; color: var(--ink); background: transparent; border: 1px solid var(--line); cursor: pointer; }
