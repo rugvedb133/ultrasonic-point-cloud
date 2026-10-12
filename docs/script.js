@@ -162,3 +162,46 @@
     return { resize: resize };
   }
 })();
+
+/* Table of contents: mark the section being read with aria-current. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  if (!links.length) return;
+
+  var items = links.map(function (a) {
+    return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function (item) { return item.section; });
+  var strip = links[0].closest('ul');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var current = null;
+  var queued = false;
+
+  function pick() {
+    queued = false;
+    var line = window.innerHeight * 0.3; // a section is current once its top passes this line
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    var found = null;
+    items.forEach(function (item) {
+      if (item.section.getBoundingClientRect().top <= line) found = item;
+    });
+    if (atBottom) found = items[items.length - 1];
+    if (found === current) return;
+    current = found;
+    items.forEach(function (item) {
+      if (item === current) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    });
+    // keep the active link visible when the bar scrolls sideways on small screens
+    if (current && strip.scrollWidth > strip.clientWidth) {
+      var a = current.link;
+      strip.scrollTo({ left: a.offsetLeft - (strip.clientWidth - a.offsetWidth) / 2, behavior: reduce.matches ? 'auto' : 'smooth' });
+    }
+  }
+
+  function queue() {
+    if (!queued) { queued = true; window.requestAnimationFrame(pick); }
+  }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  pick();
+})();

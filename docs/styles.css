@@ -20,12 +20,13 @@
   --mono: "JetBrains Mono", Consolas, monospace;
 
   color-scheme: dark;
+  --toc-h: 3.25rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--toc-h) + 0.75rem);
   background: var(--bg);
 }
 
@@ -46,13 +47,25 @@ main { flex: 1; }
 h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
 h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; letter-spacing: -0.02em; }
 
-a { color: var(--ink); text-decoration: none; } a:hover { text-decoration: underline; }
+a { color: var(--ink); text-decoration: none; }
+a:hover { text-decoration: underline; }
 img, svg, video { max-width: 100%; }
 
 .wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
 .lede { color: var(--muted); max-width: 40rem; margin: 1rem 0 0; }
 
+/* Sticky table of contents */
 .site-header { background: var(--void); padding: 0.8rem 1.25rem; }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--void); border-bottom: 1px solid var(--line); min-height: var(--toc-h); padding: 0 1.25rem; }
+.toc { max-width: 62rem; margin: 0 auto; }
+.toc ul { position: relative; display: flex; gap: 0.25rem; margin: 0; padding: 0; list-style: none; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
+.toc a { display: block; padding: 0.95rem 0.8rem 0.8rem; color: var(--muted); text-decoration: none; border-bottom: 3px solid transparent; }
+.toc a:hover { color: var(--ink); }
+.toc a[aria-current="location"] { color: var(--ink); border-bottom-color: var(--wire); }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 .site-footer { background: var(--void); color: var(--muted); padding: 1.5rem 0; font-size: 0.9rem; }
 .site-footer p { margin: 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; padding: 0; margin: 0 0 1rem; list-style: none; }
@@ -204,7 +217,7 @@ main > section { padding: 4rem 0; }
   color: var(--void);
   padding: 0.6rem 1rem;
   font-weight: 700;
-  z-index: 10;
+  z-index: 20;
 }
 .skip:focus { top: 1rem; }
 
