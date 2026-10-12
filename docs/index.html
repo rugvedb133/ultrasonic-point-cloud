@@ -155,14 +155,18 @@
         <div class="panel">
           <div class="bar">
             <p id="panel-title">Sensor at the origin: distance r, tilt &phi;, pan &theta;</p>
+            <div class="bar-actions">
+            <button class="btn alt" id="viewer-enlarge" type="button" hidden>Enlarge viewer</button>
             <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
+            </div>
           </div>
           <p class="msg" id="viewer-msg" role="status" hidden></p>
           <figure class="stage" id="coords-static" data-target="obj-spherical" data-label="the coordinates diagram">
             <object id="obj-spherical" data="images/spherical-coords.svg" type="image/svg+xml" width="800" height="400" role="img" aria-label="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
               <img src="images/spherical-coords.svg" width="800" height="400" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
             </object>
-          <figcaption>Static diagram: a point at distance r, with tilt &phi; and pan &theta;.</figcaption></figure>
+          <figcaption>Static diagram: a point at distance r, with tilt &phi; and pan &theta;.</figcaption>
+          </figure>
           <div class="viewer" id="coords-viewer" hidden>
             <div class="scene" id="scene"></div>
             <div class="controls">
@@ -239,7 +243,7 @@
         <p class="lede">We scanned a water bottle standing in front of a flat surface.</p>
 
         <figure class="video-fig">
-          <div class="video">
+          <div class="video" id="video-box">
             <iframe src="https://www.youtube-nocookie.com/embed/efCa1MFncBU?rel=0" title="Demo video: the rig scanning a water bottle" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <figcaption>The rig at work. <a href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a> if the player does not load.</figcaption>

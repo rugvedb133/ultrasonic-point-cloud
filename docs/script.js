@@ -12,12 +12,15 @@
   var viewer = document.getElementById('coords-viewer');
   var msg = document.getElementById('viewer-msg');
   var api = null;
+  var big = document.getElementById('viewer-enlarge');
+  var canDialog = typeof HTMLDialogElement === 'function';
 
   function setMode(on) {
     viewer.hidden = !on;
     staticView.hidden = on;
     btn.textContent = on ? 'Back to diagram' : 'Start interactive viewer';
     btn.setAttribute('aria-expanded', String(on));
+    if (big) big.hidden = !(on && canDialog); // enlarging only makes sense while the viewer is running
     if (on && api) api.resize();
   }
 
@@ -123,7 +126,7 @@
     function resize() {
       var w = wrap.clientWidth, h = wrap.clientHeight;
       if (!w || !h) return;
-      renderer.setSize(w, h);
+      renderer.setSize(w, h, false); // CSS sets the canvas size, so it can shrink with its container
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       render();
@@ -260,5 +263,54 @@
   });
   document.getElementById('lightbox-close').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); }); // click on the backdrop
-  dlg.addEventListener('close', function () { body.replaceChildren(); });
+
+  // The viewer and the video cannot be cloned (a copy of a canvas has no WebGL context, and a copy of the
+  // player would play a second video), so the real element moves into the dialog and a placeholder keeps its
+  // place on the page. It moves back when the dialog closes.
+  // Note: the browser reloads an <iframe> whenever it moves, so an enlarged video starts again from the beginning.
+  var restore = null;
+
+  function moveIn(el, label, text) {
+    var ph = document.createElement('div');
+    ph.className = 'moved-note';
+    ph.style.height = el.offsetHeight + 'px';
+    ph.textContent = 'Open in the enlarged view.';
+    el.replaceWith(ph);
+    restore = function () { ph.replaceWith(el); };
+
+    caption.textContent = text;
+    caption.hidden = !text;
+    dlg.setAttribute('aria-label', label);
+    body.replaceChildren(el);
+    dlg.showModal();
+  }
+
+  var viewerBtn = document.getElementById('viewer-enlarge');
+  if (viewerBtn) {
+    viewerBtn.addEventListener('click', function () {
+      var title = document.getElementById('panel-title');
+      moveIn(document.getElementById('coords-viewer'), 'Interactive viewer', title ? title.textContent : '');
+    });
+  }
+
+  var videoCap = document.querySelector('.video-fig figcaption');
+  var videoBox = document.getElementById('video-box');
+  if (videoCap && videoBox) {
+    var vbtn = document.createElement('button');
+    vbtn.type = 'button';
+    vbtn.className = 'enlarge';
+    vbtn.textContent = 'Enlarge';
+    vbtn.setAttribute('aria-label', 'Enlarge the demo video');
+    videoCap.appendChild(vbtn);
+    vbtn.addEventListener('click', function () {
+      var copy = videoCap.cloneNode(true);
+      Array.prototype.forEach.call(copy.querySelectorAll('.enlarge'), function (b) { b.remove(); });
+      moveIn(videoBox, 'Demo video', copy.textContent.replace(/\s+/g, ' ').trim());
+    });
+  }
+
+  dlg.addEventListener('close', function () {
+    if (restore) { restore(); restore = null; }
+    body.replaceChildren();
+  });
 })();

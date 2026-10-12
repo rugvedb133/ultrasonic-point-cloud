@@ -178,6 +178,8 @@ main > section { padding: 4rem 0; }
 .stage object { aspect-ratio: 2 / 1; }
 .msg { margin: 0; padding: 0.7rem 1rem; background: var(--void); border-bottom: 1px solid var(--line); color: var(--muted); max-width: none; }
 
+.bar-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.moved-note { display: grid; place-items: center; border: 1px dashed var(--line); color: var(--muted); font-size: 0.9rem; }
 .btn { font: 700 0.95rem var(--body); background: var(--pcb); color: #fff; border: 2px solid var(--pcb); padding: 0.55rem 1.1rem; cursor: pointer; }
 .btn:hover { filter: brightness(1.15); }
 .btn:disabled { opacity: 0.6; cursor: progress; }
@@ -185,7 +187,7 @@ main > section { padding: 4rem 0; }
 .btn.alt:hover { border-color: var(--muted); filter: none; }
 
 .viewer { display: grid; grid-template-columns: 1.4fr 1fr; background: var(--void); }
-.scene { position: relative; min-height: 16rem; aspect-ratio: 16 / 10; }
+.scene { position: relative; min-width: 0; min-height: 16rem; aspect-ratio: 16 / 10; overflow: hidden; }
 .scene canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
 .scene canvas:active { cursor: grabbing; }
 .controls { padding: 1rem 1.2rem; background: var(--surface); }
@@ -217,6 +219,8 @@ main > section { padding: 4rem 0; }
 .lightbox-close:hover { border-color: var(--muted); }
 .lightbox-body img { display: block; width: auto; height: auto; max-width: calc(100vw - 4rem); max-height: calc(100vh - 10rem); }
 .lightbox-body object { display: block; aspect-ratio: var(--ar, 1.6); height: auto; width: min(70rem, calc(100vw - 4rem), calc((100vh - 10rem) * var(--ar, 1.6))); }
+.lightbox-body .video { width: min(70rem, calc(100vw - 4rem), calc((100vh - 10rem) * 16 / 9)); }
+.lightbox-body .viewer { width: min(72rem, calc(100vw - 4rem)); }
 .lightbox-caption { margin: 0; max-width: 60ch; text-align: center; color: var(--muted); font-size: 0.9rem; }
 
 /* Accent colours: set data-accent on an element, and rules that use var(--accent) pick it up */
