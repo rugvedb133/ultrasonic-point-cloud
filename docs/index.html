@@ -65,12 +65,12 @@
           </ul>
         </div>
         <div class="shots">
-          <figure>
-            <img src="images/rig.jpg" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
+          <figure data-target="img-rig" data-label="the rig photo">
+            <img id="img-rig" src="images/rig.jpg" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
             <figcaption>The assembled rig.</figcaption>
           </figure>
-          <figure>
-            <img src="images/point-cloud.png" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
+          <figure data-target="img-cloud-hero" data-label="the point cloud">
+            <img id="img-cloud-hero" src="images/point-cloud.png" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
             <figcaption>A cylindrical object in front of a flat surface, as the rig saw it.</figcaption>
           </figure>
         </div>
@@ -83,7 +83,7 @@
         <p class="lede">Four off-the-shelf parts and three programs.</p>
         <ul class="cards">
           <li class="card" data-accent="blue">
-            <object class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object>
+            <div class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing"><object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object></div>
             <div class="body">
               <h3>HC-SR04 sensor</h3>
               <p>The cheap part, and the main reason our scans are approximate. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
@@ -91,7 +91,7 @@
             </div>
           </li>
           <li class="card" data-accent="red">
-            <object class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object>
+            <div class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing"><object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object></div>
             <div class="body">
               <h3>MSP430G2 LaunchPad</h3>
               <p>The main processor. It had enough pins and memory to hold the readings, and a serial link to send them to the PC.</p>
@@ -99,7 +99,7 @@
             </div>
           </li>
           <li class="card" data-accent="green">
-            <object class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object>
+            <div class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing"><object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object></div>
             <div class="body">
               <h3>Arduino Uno</h3>
               <p>Used for early sensor tests and for calibrating the servos.</p>
@@ -107,7 +107,7 @@
             </div>
           </li>
           <li class="card" data-accent="orange">
-            <object class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object>
+            <div class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing"><object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object></div>
             <div class="body">
               <h3>Pan/tilt mount</h3>
               <p>Two micro servos in a kit. The lower one pans, the upper one tilts, and PWM pulses from the board set the angles. Its wobble limits how sharp a scan can be.</p>
@@ -138,9 +138,9 @@
           <li>The servos step to the next angle and the cycle repeats. After several sweeps in both directions, the points add up to a map of the scene.</li>
         </ol>
 
-        <figure class="diagram">
+        <figure class="diagram" data-target="obj-block" data-label="the block diagram">
           <div class="scroll-x">
-            <object data="images/block-diagram.svg" type="image/svg+xml" width="960" height="330" role="img" aria-label="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
+            <object id="obj-block" data="images/block-diagram.svg" type="image/svg+xml" width="960" height="330" role="img" aria-label="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
               <img src="images/block-diagram.svg" width="960" height="330" alt="Block diagram. A power supply feeds the motors, the ultrasonic sensor and the microcontroller. The microcontroller reads the sensor, drives the motors, and sends data over a serial link to a Python script, which drives the display. The sensor is mounted on the motors.">
             </object>
           </div>
@@ -158,8 +158,8 @@
             <button class="btn" id="viewer-toggle" type="button" aria-controls="coords-viewer" aria-expanded="false">Start interactive viewer</button>
           </div>
           <p class="msg" id="viewer-msg" role="status" hidden></p>
-          <div class="stage" id="coords-static">
-            <object data="images/spherical-coords.svg" type="image/svg+xml" width="800" height="400" role="img" aria-label="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
+          <div class="stage" id="coords-static" data-target="obj-spherical" data-label="the coordinates diagram">
+            <object id="obj-spherical" data="images/spherical-coords.svg" type="image/svg+xml" width="800" height="400" role="img" aria-label="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
               <img src="images/spherical-coords.svg" width="800" height="400" alt="Diagram of spherical coordinates. A point sits at distance r from the origin. The tilt angle phi is measured from the vertical z axis and the pan angle theta from the x axis in the horizontal plane. The formulas for x, y and z are written beside it.">
             </object>
           </div>
@@ -187,8 +187,8 @@
         <p class="lede">Everything that moves is two micro servos in a pan/tilt kit. Everything that decides is the board.</p>
 
         <div class="mount-grid">
-          <figure class="mount-fig">
-            <object class="mount-art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."><img src="images/pan-tilt-mount.svg" width="480" height="300" alt="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."></object>
+          <figure class="mount-fig" data-target="obj-mount" data-label="the pan/tilt mount drawing">
+            <object id="obj-mount" class="mount-art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."><img src="images/pan-tilt-mount.svg" width="480" height="300" alt="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."></object>
             <figcaption>A drawing of the kit we used, not a photo of our build.</figcaption>
           </figure>
           <div>
@@ -224,9 +224,9 @@
           <li><strong>One point at a time</strong><span>With a single sensor, a scan takes a while. Several sensors, each covering part of the sphere, would cut the time by a factor of however many we add.</span></li>
         </ul>
 
-        <figure class="diagram beam">
+        <figure class="diagram beam" data-target="obj-beam" data-label="the beam diagram">
           <div class="scroll-x">
-            <object data="images/beam-spread.svg" type="image/svg+xml" width="800" height="300" role="img" aria-label="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."><img src="images/beam-spread.svg" width="800" height="300" alt="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."></object>
+            <object id="obj-beam" data="images/beam-spread.svg" type="image/svg+xml" width="800" height="300" role="img" aria-label="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."><img src="images/beam-spread.svg" width="800" height="300" alt="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."></object>
           </div>
           <figcaption>The 15&deg; beam from above, drawn to scale. Widths assume 15&deg; is the full cone angle.</figcaption>
         </figure>
@@ -246,8 +246,8 @@
         </figure>
 
         <div class="result-grid">
-          <figure class="result-fig">
-            <img src="images/point-cloud.png" alt="The scan as a point cloud: columns of white dots on a grid, with a curved cluster standing in front of straight columns." loading="lazy" decoding="async">
+          <figure class="result-fig" data-target="img-cloud-results" data-label="the point cloud">
+            <img id="img-cloud-results" src="images/point-cloud.png" alt="The scan as a point cloud: columns of white dots on a grid, with a curved cluster standing in front of straight columns." loading="lazy" decoding="async">
             <figcaption>The point cloud from that scan.</figcaption>
           </figure>
           <div class="result-text">
@@ -300,5 +300,12 @@
       </nav>
     </div>
   </footer>
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged view">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" type="button"><span aria-hidden="true">&times;</span> Close</button>
+      <div class="lightbox-body" id="lightbox-body"></div>
+      <p class="lightbox-caption" id="lightbox-caption" hidden></p>
+    </div>
+  </dialog>
 </body>
 </html>

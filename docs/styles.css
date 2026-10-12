@@ -55,7 +55,6 @@ img, svg, video { max-width: 100%; }
 .lede { color: var(--muted); max-width: 40rem; margin: 1rem 0 0; }
 
 /* Sticky table of contents */
-.site-header { background: var(--void); padding: 0.8rem 1.25rem; }
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--void); border-bottom: 1px solid var(--line); min-height: var(--toc-h); padding: 0 1.25rem; }
 .toc { max-width: 62rem; margin: 0 auto; }
 .toc ul { position: relative; display: flex; gap: 0.25rem; margin: 0; padding: 0; list-style: none; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
@@ -101,7 +100,6 @@ main > section { padding: 4rem 0; }
 .shots figure { margin: 0; border: 1px solid var(--line); background: var(--void); }
 .shots img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .shots figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.9rem; }
-
 
 /* Stack section */
 .stack { border-top: 1px solid var(--line); }
@@ -199,6 +197,20 @@ main > section { padding: 4rem 0; }
 .row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
 
 @media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
+
+/* Lightbox */
+[data-target] { position: relative; cursor: zoom-in; }
+.enlarge { position: absolute; top: 0.5rem; right: 0.5rem; z-index: 2; font: 700 0.8rem var(--body); padding: 0.3rem 0.65rem; color: var(--ink); background: rgba(31, 33, 56, 0.88); border: 1px solid var(--line); cursor: pointer; }
+.enlarge:hover { border-color: var(--muted); }
+
+.lightbox { padding: 0; max-width: calc(100vw - 1.5rem); max-height: calc(100vh - 1.5rem); border: 1px solid var(--line); background: var(--void); color: var(--ink); }
+.lightbox::backdrop { background: rgba(10, 11, 20, 0.82); }
+.lightbox-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; padding: 3.4rem 1rem 1rem; }
+.lightbox-close { position: absolute; top: 0.7rem; right: 0.7rem; font: 700 0.95rem var(--body); padding: 0.4rem 0.9rem; color: var(--ink); background: transparent; border: 2px solid var(--line); cursor: pointer; }
+.lightbox-close:hover { border-color: var(--muted); }
+.lightbox-body img { display: block; width: auto; height: auto; max-width: calc(100vw - 4rem); max-height: calc(100vh - 10rem); }
+.lightbox-body object { display: block; aspect-ratio: var(--ar, 1.6); height: auto; width: min(70rem, calc(100vw - 4rem), calc((100vh - 10rem) * var(--ar, 1.6))); }
+.lightbox-caption { margin: 0; max-width: 60ch; text-align: center; color: var(--muted); font-size: 0.9rem; }
 
 /* Accent colours: set data-accent on an element, and rules that use var(--accent) pick it up */
 [data-accent="blue"] { --accent: var(--pcb); }

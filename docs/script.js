@@ -205,3 +205,54 @@
   window.addEventListener('resize', queue);
   pick();
 })();
+
+/* Lightbox: any element with data-target opens a copy of the element with that id in the single <dialog>. */
+(function () {
+  var dlg = document.getElementById('lightbox');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+
+  var body = document.getElementById('lightbox-body');
+  var caption = document.getElementById('lightbox-caption');
+  var containers = Array.prototype.slice.call(document.querySelectorAll('[data-target]'));
+
+  // A click inside an <object> never reaches the page, so every container also gets a real button.
+  // Added here, not in the HTML, so there is no dead button without JavaScript.
+  containers.forEach(function (box) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'enlarge';
+    btn.textContent = 'Enlarge';
+    btn.setAttribute('aria-label', 'Enlarge ' + (box.dataset.label || 'this image'));
+    box.appendChild(btn);
+  });
+
+  function open(box) {
+    var target = document.getElementById(box.dataset.target);
+    if (!target) return;
+
+    var clone = target.cloneNode(true);
+    clone.removeAttribute('id');
+    Array.prototype.forEach.call(clone.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); });
+    if (clone.tagName === 'IMG') clone.loading = 'eager';
+    if (clone.tagName === 'OBJECT') {
+      var w = parseFloat(clone.getAttribute('width')), h = parseFloat(clone.getAttribute('height'));
+      if (w && h) clone.style.setProperty('--ar', String(w / h));
+    }
+
+    var cap = box.querySelector('figcaption');
+    caption.textContent = cap ? cap.textContent : '';
+    caption.hidden = !cap;
+    dlg.setAttribute('aria-label', target.getAttribute('alt') || target.getAttribute('aria-label') || 'Enlarged view');
+
+    body.replaceChildren(clone);
+    dlg.showModal();
+  }
+
+  document.addEventListener('click', function (e) {
+    var box = e.target.closest('[data-target]');
+    if (box && !dlg.contains(box)) open(box);
+  });
+  document.getElementById('lightbox-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); }); // click on the backdrop
+  dlg.addEventListener('close', function () { body.replaceChildren(); });
+})();
