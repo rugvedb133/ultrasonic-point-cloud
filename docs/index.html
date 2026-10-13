@@ -11,21 +11,23 @@
   <link rel="canonical" href="https://rugvedb133.github.io/ultrasonic-point-cloud/">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en">
   <meta property="og:title" content="Point Cloud from an Ultrasonic Sensor">
   <meta property="og:description" content="A 3D scanner built from one ultrasonic sensor on a pan/tilt mount. A Python script turns each distance reading into a point in space.">
   <meta property="og:url" content="https://rugvedb133.github.io/ultrasonic-point-cloud/">
   <meta property="og:image" content="https://rugvedb133.github.io/ultrasonic-point-cloud/images/og.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="A point cloud of an object scanned with an ultrasonic sensor">
+  <meta property="og:image:alt" content="Social preview: a cylinder made of white dots on a grid floor, beside the title &ldquo;Point cloud from an ultrasonic sensor&rdquo; and three sensor stats: range 2 cm to 4 m, beam width 15 degrees, pan and tilt 360 and 180 degrees.">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Point Cloud from an Ultrasonic Sensor">
   <meta name="twitter:description" content="A 3D scanner built from one ultrasonic sensor on a pan/tilt mount.">
   <meta name="twitter:image" content="https://rugvedb133.github.io/ultrasonic-point-cloud/images/og.png">
-  <meta name="twitter:image:alt" content="A point cloud of an object scanned with an ultrasonic sensor">
+  <meta name="twitter:image:alt" content="Social preview: a cylinder made of white dots on a grid floor, beside the title &ldquo;Point cloud from an ultrasonic sensor&rdquo; and three sensor stats: range 2 cm to 4 m, beam width 15 degrees, pan and tilt 360 and 180 degrees.">
   <!-- Icons -->
-  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Fonts -->
@@ -51,7 +53,7 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <img class="axes" src="images/axes.svg" alt="" width="56" height="56">
@@ -66,11 +68,11 @@
         </div>
         <div class="shots">
           <figure data-target="img-rig" data-label="the rig photo">
-            <img id="img-rig" src="images/rig.jpg" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
+            <img id="img-rig" src="images/rig.jpg" width="958" height="710" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
             <figcaption>The assembled rig.</figcaption>
           </figure>
           <figure data-target="img-cloud-hero" data-label="the point cloud">
-            <img id="img-cloud-hero" src="images/point-cloud.png" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
+            <img id="img-cloud-hero" src="images/point-cloud.png" width="548" height="495" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
             <figcaption>A cylindrical object in front of a flat surface, as the rig saw it.</figcaption>
           </figure>
         </div>
@@ -251,7 +253,7 @@
 
         <div class="result-grid">
           <figure class="result-fig" data-target="img-cloud-results" data-label="the point cloud">
-            <img id="img-cloud-results" src="images/point-cloud.png" alt="The scan as a point cloud: columns of white dots on a grid, with a curved cluster standing in front of straight columns." loading="lazy" decoding="async">
+            <img id="img-cloud-results" src="images/point-cloud.png" width="548" height="495" alt="The scan as a point cloud: columns of white dots on a grid, with a curved cluster standing in front of straight columns." loading="lazy" decoding="async">
             <figcaption>The point cloud from that scan.</figcaption>
           </figure>
           <div class="result-text">

@@ -314,3 +314,28 @@
     body.replaceChildren();
   });
 })();
+
+/* Sideways-scrolling diagram boxes: keyboard users must be able to scroll them, so while a box actually
+   overflows it becomes a focusable, labelled region. When it fits, it is left out of the tab order. */
+(function () {
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.scroll-x'));
+  if (!boxes.length) return;
+
+  function check() {
+    boxes.forEach(function (box) {
+      if (box.scrollWidth > box.clientWidth + 1) {
+        var owner = box.closest('[data-label]');
+        box.tabIndex = 0;
+        box.setAttribute('role', 'region');
+        box.setAttribute('aria-label', 'Scrollable area: ' + (owner ? owner.dataset.label : 'diagram'));
+      } else {
+        box.removeAttribute('tabindex');
+        box.removeAttribute('role');
+        box.removeAttribute('aria-label');
+      }
+    });
+  }
+  window.addEventListener('resize', check);
+  window.addEventListener('load', check);
+  check();
+})();

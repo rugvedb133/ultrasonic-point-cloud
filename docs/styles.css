@@ -98,7 +98,7 @@ main > section { padding: 4rem 0; }
 
 .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
 .shots figure { margin: 0; border: 1px solid var(--line); background: var(--void); }
-.shots img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.shots img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .shots figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.9rem; }
 
 /* Stack section */
@@ -218,8 +218,8 @@ main > section { padding: 4rem 0; }
   mask: var(--logo) center / contain no-repeat;
   transition: background-color 0.2s;
 }
-[data-tool]:hover .tool-logo::after,
-.tool-logo:hover::after { background-color: var(--color, currentColor); }
+.tool-logo:hover::after,
+[data-tool]:hover .tool-logo::after { background-color: var(--color, currentColor); }
 
 [data-tool="python"] { --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/python.svg"); --color: #3776ab; }
 [data-tool="arduino"] { --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/arduino.svg"); --color: #00878f; }
@@ -232,7 +232,7 @@ main > section { padding: 4rem 0; }
 
 /* Lightbox */
 [data-target] { cursor: zoom-in; }
-.enlarge { margin-left: 0.6rem; padding: 0.2rem 0.6rem; font: 700 0.85rem var(--body); white-space: nowrap; color: var(--ink); background: transparent; border: 1px solid var(--line); cursor: pointer; }
+.enlarge { margin-left: 0.6rem; padding: 0.35rem 0.7rem; font: 700 0.85rem var(--body); white-space: nowrap; color: var(--ink); background: transparent; border: 1px solid var(--line); cursor: pointer; }
 .enlarge:hover { border-color: var(--muted); }
 .art-box { margin: 0; }
 .stage { margin: 0; }
@@ -258,6 +258,15 @@ main > section { padding: 4rem 0; }
 [data-accent="red"] { --accent: var(--red); }
 [data-accent="green"] { --accent: var(--ax-y); }
 [data-accent="orange"] { --accent: var(--wire); }
+
+/* The skip link moves focus to <main>; it does not need a ring of its own */
+main:focus { outline: none; }
+
+/* In forced-colors mode backgrounds are replaced, so give the masked icons a system colour to stay visible */
+@media (forced-colors: active) {
+  .tool-logo[data-tool]::after,
+  [data-tool] .tool-logo::after { background-color: CanvasText; forced-color-adjust: none; }
+}
 
 /* Visible focus for keyboard users */
 :focus-visible { outline: 3px solid var(--wire); outline-offset: 3px; }
