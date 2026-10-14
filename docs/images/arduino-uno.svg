@@ -26,10 +26,12 @@
       <path d="M0 0H5M0 0V5" stroke="#7a8098" stroke-width="1"/>
     </pattern>
   </defs>
+  <g>
+  <title>Arduino Uno board</title>
   <rect x="60" y="18" width="400" height="264" rx="10" fill="#0e8a94" stroke="#000" stroke-opacity=".35" stroke-width="2">
-    <title>Arduino Uno board</title>
   </rect>
   <rect x="60" y="18" width="400" height="264" rx="10" fill="url(#sh)"/>
+  </g>
   <g>
     <title>USB-B connector: power and serial link to the PC</title>
     <rect x="12" y="44" width="92" height="76" rx="4" fill="url(#mt)" stroke="#6b7088" stroke-width="2"/>
@@ -75,6 +77,7 @@
     <rect x="268.4" y="29.4" width="10.2" height="10.2" rx="1" fill="#0a0b12"/>
     <circle cx="273.5" cy="34.5" r="3.4000000000000004" fill="#d6b25e" stroke="#8a6a1f"/>
     <circle cx="272.5" cy="33.5" r="1.1900000000000002" fill="#f4e3a6"/>
+    <text x="204" y="24" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">DIGITAL (PWM ~)</text>
   </g>
   <g>
     <title>Digital pin header (7 to 0)</title>
@@ -131,6 +134,7 @@
     <rect x="282.4" y="261.4" width="10.2" height="10.2" rx="1" fill="#0a0b12"/>
     <circle cx="287.5" cy="266.5" r="3.4000000000000004" fill="#d6b25e" stroke="#8a6a1f"/>
     <circle cx="286.5" cy="265.5" r="1.1900000000000002" fill="#f4e3a6"/>
+    <text x="228" y="254" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">POWER</text>
   </g>
   <g>
     <title>Analog input header (A0 to A5)</title>
@@ -153,10 +157,8 @@
     <rect x="394.4" y="261.4" width="10.2" height="10.2" rx="1" fill="#0a0b12"/>
     <circle cx="399.5" cy="266.5" r="3.4000000000000004" fill="#d6b25e" stroke="#8a6a1f"/>
     <circle cx="398.5" cy="265.5" r="1.1900000000000002" fill="#f4e3a6"/>
+    <text x="354" y="254" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">ANALOG IN</text>
   </g>
-  <text x="204" y="24" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">DIGITAL (PWM ~)</text>
-  <text x="228" y="254" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">POWER</text>
-  <text x="354" y="254" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="middle">ANALOG IN</text>
   <g>
     <title>USB-serial chip (ATmega16U2)</title>
     <path d="M154.0 113v5M154.0 152v5M145 122.0h5M184 122.0h5" stroke="#c9ccd6" stroke-width="2"/>
@@ -234,7 +236,6 @@
   </g>
   <g>
     <title>ICSP header</title>
-    <g>
       <rect x="412" y="130" width="42" height="14" rx="2" fill="#1b1c28" stroke="#07080d"/>
       <rect x="414.8" y="132.8" width="8.4" height="8.4" rx="1" fill="#0a0b12"/>
       <circle cx="419.0" cy="137.0" r="2.8000000000000003" fill="#d6b25e" stroke="#8a6a1f"/>
@@ -245,7 +246,6 @@
       <rect x="442.8" y="132.8" width="8.4" height="8.4" rx="1" fill="#0a0b12"/>
       <circle cx="447.0" cy="137.0" r="2.8000000000000003" fill="#d6b25e" stroke="#8a6a1f"/>
       <circle cx="446.0" cy="136.0" r="0.9800000000000001" fill="#f4e3a6"/>
-    </g>
   </g>
   <rect x="352" y="78" width="14" height="8" rx="1.5" fill="#ffb347" stroke="#333"/>
   <text x="372" y="86" fill="#f2f4ff" font-family="sans-serif" font-size="8" font-weight="400" text-anchor="start">L</text>

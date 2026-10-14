@@ -70,14 +70,18 @@ img, svg, video {
   max-width: 100%;
 }
 
+p, li {
+  text-align: justify;
+}
+
 .wrap {
-  max-width: 62rem;
+  max-width: 92rem;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 .lede {
   color: var(--muted);
-  max-width: 40rem;
+  /* max-width: 40rem; */
   margin: 1rem 0 0;
 }
 
@@ -92,13 +96,14 @@ img, svg, video {
   padding: 0 1.25rem;
 }
 .toc {
-  max-width: 62rem;
+  /* max-width: 62rem; */
   margin: 0 auto;
 }
 .toc ul {
   position: relative;
   display: flex;
-  gap: 0.25rem;
+  justify-content: flex-end;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -117,7 +122,6 @@ img, svg, video {
   color: var(--ink);
 }
 .toc a[aria-current="location"] {
-  color: var(--ink);
   border-bottom-color: var(--wire);
 }
 
@@ -144,7 +148,7 @@ img, svg, video {
   list-style: none;
 }
 main > section {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 /* Hero: dark viewer look, grid floor like our 3D viewer */
@@ -170,10 +174,10 @@ main > section {
 }
 .axes {
   display: block;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 .hero-copy {
-  max-width: 40rem;
+  /* max-width: 40rem; */
 }
 .hero-copy p {
   color: #d3d7f0;
@@ -183,7 +187,7 @@ main > section {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 2.5rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -200,7 +204,7 @@ main > section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1.2rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 .shots figure {
   margin: 0;
@@ -218,6 +222,9 @@ main > section {
   padding: 0.6rem 0.9rem;
   color: var(--muted);
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 /* Stack section */
@@ -229,7 +236,7 @@ main > section {
 }
 .sub {
   font-size: 1.3rem;
-  margin: 3rem 0 1rem;
+  margin: 2rem 0 1rem;
 }
 
 .cards {
@@ -237,7 +244,7 @@ main > section {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1.2rem;
   padding: 0;
-  margin: 2rem 0 0;
+  margin: 2rem auto 0;
   list-style: none;
 }
 .card {
@@ -252,6 +259,7 @@ main > section {
 .card .art {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 8 / 5;
   background: var(--void);
   color: var(--muted);
@@ -316,10 +324,10 @@ main > section {
   font-size: 1.9rem;
 }
 .how p {
-  max-width: 42rem;
+  /* max-width: 42rem; */
 }
 .steps {
-  max-width: 42rem;
+  /* max-width: 42rem; */
   padding-left: 1.4rem;
   margin: 1.6rem 0 2rem;
 }
@@ -332,7 +340,8 @@ main > section {
   font-weight: 700;
 }
 .diagram {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1080px;
 }
 .diagram object,
 .diagram img {
@@ -350,6 +359,9 @@ main > section {
 }
 .diagram figcaption {
   margin-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .mount {
   border-top: 1px solid var(--line);
@@ -371,13 +383,18 @@ main > section {
   display: block;
   width: 100%;
   aspect-ratio: 8 / 5;
-  background: var(--void);
   border: 1px solid var(--line);
+}
+.mount-fig .mount-art {
+  background: var(--void);
 }
 .mount-fig figcaption {
   margin-top: 0.4rem;
   color: var(--muted);
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .spec {
   display: grid;
@@ -408,7 +425,7 @@ main > section {
   font-size: 1.9rem;
 }
 .scan p {
-  max-width: 42rem;
+  /* max-width: 42rem; */
 }
 .scan .tools {
   margin-bottom: 2rem;
@@ -420,11 +437,11 @@ main > section {
   font-size: 1.9rem;
 }
 .video-fig, .result-fig {
-  margin: 0;
+  margin: 0 auto;
 }
 .video-fig {
   margin-top: 2rem;
-  max-width: 52rem;
+  max-width: 1080px;
 }
 .video {
   aspect-ratio: 16 / 9;
@@ -442,6 +459,9 @@ main > section {
   margin-top: 0.4rem;
   color: var(--muted);
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .result-grid {
   display: grid;
@@ -458,7 +478,7 @@ main > section {
 }
 .result-text p {
   margin: 0 0 1rem;
-  max-width: 36rem;
+  /* max-width: 36rem; */
 }
 @media (max-width: 760px) {
   .result-grid {
@@ -472,12 +492,12 @@ main > section {
   font-size: 1.9rem;
 }
 .reflection p {
-  max-width: 42rem;
+  /* max-width: 42rem; */
 }
 .lessons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1.6rem;
+  gap: 2.6rem;
   padding: 0;
   margin: 2rem 0 0;
   list-style: none;
@@ -495,7 +515,7 @@ main > section {
   color: var(--muted);
 }
 .formula {
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 .formula code {
   display: inline-block;
@@ -509,6 +529,8 @@ main > section {
   margin-top: 2rem;
   border: 1px solid var(--line);
   background: var(--surface);
+  max-width: 1080px;
+  margin-inline: auto;
 }
 .panel .bar {
   display: flex;
@@ -529,7 +551,7 @@ main > section {
 .stage img {
   display: block;
   width: 100%;
-  max-width: 50rem;
+  /* max-width: 50rem; */
   height: auto;
   margin: 0 auto;
 }
@@ -692,6 +714,10 @@ main > section {
   --logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cpath d='m18.94 141.68 73.62 42.37v-85L18.94 56.68zm22.84-48.56 27.71 16.09v32.17l-27.71-16.02z'/%3E%3Cpath d='M96 7.95 22.38 50.59 96 92.96l73.62-42.37zM67.97 50.58l28.05-16.14 28.06 16.16-28.06 16.2z'/%3E%3Cpath d='M99.44 99.05v85L173.06 142V56.68zm50.91 29.41-28.16 16.16v-32.27l28.16-16.25z'/%3E%3C/svg%3E");
   --color: #cc0000;
 }
+[data-tool="github"] {
+  --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/github.svg");
+  --color: #58a6ff;
+}
 
 /* Lightbox */
 [data-target] {
@@ -706,6 +732,7 @@ main > section {
   background: transparent;
   border: 1px solid var(--line);
   cursor: pointer;
+  border-radius: 3px;
 }
 .enlarge:hover {
   border-color: var(--muted);
@@ -721,10 +748,13 @@ main > section {
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .card figcaption {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 0.6rem;
   padding: 0.45rem 0.8rem;
@@ -737,14 +767,16 @@ main > section {
   padding: 0;
   max-width: calc(100vw - 1.5rem);
   max-height: calc(100vh - 1.5rem);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(31, 33, 56, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  background: rgba(31, 33, 56, 0.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
   backdrop-filter: blur(20px) saturate(1.3);
   color: var(--ink);
+  border-radius: 6px;
 }
 .lightbox::backdrop {
   background: rgba(10, 11, 20, 0.45);
+  backdrop-filter: blur(7px);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .lightbox {
@@ -769,6 +801,7 @@ main > section {
   background: transparent;
   border: 2px solid var(--line);
   cursor: pointer;
+  border-radius: 4px;
 }
 .lightbox-close:hover {
   border-color: var(--muted);
@@ -794,7 +827,7 @@ main > section {
 }
 .lightbox-caption {
   margin: 0;
-  max-width: 60ch;
+  /* max-width: 60ch; */
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;

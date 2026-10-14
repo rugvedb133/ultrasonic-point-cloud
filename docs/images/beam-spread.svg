@@ -2,9 +2,12 @@
 <style>:not(svg):has(> title){ cursor:help }</style>
 <title>Beam spread of the HC-SR04, drawn to scale from above</title>
 <desc>A 15 degree cone leaves the sensor and widens to about 26 cm at 1 m, 53 cm at 2 m and 105 cm at 4 m.</desc>
+<g>
+<text x="86" y="142" font-size="18" fill="#f2f4ff" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">15°</text>
+    <title>The 15° beam</title>
 <polygon points="60,150 740,60.5 740,239.5" fill="#4a9be0" fill-opacity=".2" stroke="#4a9be0" stroke-width="2">
-<title>The 15° beam</title>
 </polygon>
+</g>
 <path d="M60 150H740" stroke="#b4b9d8" stroke-dasharray="6 6" stroke-opacity=".6"/>
 <g>
 <title>At 1 m the beam is about 26 cm wide</title>
@@ -28,5 +31,4 @@
 <title>HC-SR04 sensor</title>
 <rect x="26" y="128" width="36" height="44" rx="4" fill="#1d6fb8" stroke="#4a9be0" stroke-width="2"/>
 </g>
-<text x="86" y="142" font-size="18" fill="#f2f4ff" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">15°</text>
 </svg>

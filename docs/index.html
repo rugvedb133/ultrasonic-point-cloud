@@ -58,18 +58,18 @@
       <div class="wrap">
         <img class="axes" src="images/axes.svg" alt="" width="56" height="56">
         <div class="hero-copy">
-          <h1 id="hero-title">A 3D scan from one ultrasonic sensor</h1>
+          <h1 id="hero-title">A 3D point cloud from an ultrasonic sensor scan</h1>
           <p>We put a low-cost HC-SR04 on a two-servo pan/tilt mount, swept it across a scene, and turned every distance reading into a point in space.</p>
           <ul class="chips" aria-label="Main parts">
-            <li data-accent="blue">HC-SR04 sensor</li>
-            <li class="tool-logo" data-accent="red" data-tool="ti">MSP430G2 LaunchPad</li>
+            <li data-accent="blue">HC-SR04 ultrasonic sensor</li>
+            <li class="tool-logo" data-accent="red" data-tool="ti">TI MSP430G2 LaunchPad</li>
             <li class="tool-logo" data-accent="orange" data-tool="python">Python</li>
           </ul>
         </div>
         <div class="shots">
           <figure data-target="img-rig" data-label="the rig photo">
             <img id="img-rig" src="images/rig.jpg" width="958" height="710" alt="Our assembled rig: an ultrasonic sensor on a two-servo pan/tilt mount, wired to a microcontroller board and breadboard." fetchpriority="high" decoding="async">
-            <figcaption>The assembled rig.</figcaption>
+            <figcaption>Photo of the assembled rig.</figcaption>
           </figure>
           <figure data-target="img-cloud-hero" data-label="the point cloud">
             <img id="img-cloud-hero" src="images/point-cloud.png" width="548" height="495" alt="A point cloud shown as columns of white dots on a grid: a curved object standing in front of a flat wall." decoding="async">
@@ -87,13 +87,14 @@
           <li class="card" data-accent="blue">
             <figure class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing">
               <object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below.">
+                <img src="images/hc-sr04.svg" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below." alt="HC-SR04 ultrasonic sensor">
                 <span>HC-SR04 ultrasonic sensor</span>
               </object>
               <figcaption>Drawing of the sensor module.</figcaption>
             </figure>
             <div class="body">
               <h3>HC-SR04 sensor</h3>
-              <p>The cheap part, and the main reason our scans are approximate. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
+              <p>The cheap ultrasonic sensor. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
               <dl>
                 <dt>Range</dt>
                   <dd>2 cm to 4 m</dd>
@@ -109,6 +110,7 @@
           <li class="card" data-accent="red" data-tool="ti">
             <figure class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing">
               <object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers.">
+                <img src="images/msp430-launchpad.svg" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers." alt="Texas Instruments MSP430G2 LaunchPad">
                 <span>MSP430G2 LaunchPad</span>
               </object>
               <figcaption>Drawing of the LaunchPad.</figcaption>
@@ -131,13 +133,14 @@
           <li class="card" data-accent="green" data-tool="arduino">
             <figure class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing">
               <object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers.">
+                <img src="images/arduino-uno.svg" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers." alt="Arduino Uno">
                 <span>Arduino Uno</span>
               </object>
               <figcaption>Drawing of the Uno.</figcaption>
             </figure>
             <div class="body">
               <h3 class="tool-logo">Arduino Uno</h3>
-              <p>Used for early sensor tests and for calibrating the servos.</p>
+              <p>Used for early sensor tests and for calibrating the servos due to its ease of programming.</p>
               <dl>
                 <dt>Chip</dt>
                   <dd>ATmega328P</dd>
@@ -153,6 +156,7 @@
           <li class="card" data-accent="orange">
             <figure class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing">
               <object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires.">
+                <img src="images/pan-tilt-mount.svg" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires." alt="Pan and tilt mount">
                 <span>Pan and tilt mount</span>
               </object>
               <figcaption>Drawing of the pan/tilt kit.</figcaption>
@@ -331,7 +335,7 @@
           </li>
           <li>
             <strong>A wobbly mount</strong>
-            <span>Our report names the mount's stability, along with the sensor's accuracy, as the limit on resolution. Two small servos in a kit can only hold an angle so well.</span>
+            <span>The mount's stability, along with the sensor's accuracy, is the limit on resolution. Two small servos in a kit can only hold an angle so well.</span>
           </li>
           <li>
             <strong>One point at a time</strong>
@@ -359,7 +363,10 @@
           <div class="video" id="video-box">
             <iframe src="https://www.youtube-nocookie.com/embed/efCa1MFncBU?rel=0" title="Demo video: the rig scanning a water bottle" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <figcaption>The rig at work. <a class="tool-logo" data-tool="youtube" href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a> if the player does not load.</figcaption>
+          <figcaption>
+            The rig at work.
+            <a class="tool-logo" data-tool="youtube" href="https://www.youtube.com/watch?v=efCa1MFncBU">Watch on YouTube</a>
+          </figcaption>
         </figure>
 
         <div class="result-grid">
@@ -412,7 +419,7 @@
         <ul class="footer-links">
           <li><a href="https://rugvedb133.github.io/projects.html">&larr; All projects</a></li>
           &bull;
-          <li><a href="https://github.com/rugvedb133/ultrasonic-point-cloud">Page source on GitHub</a></li>
+          <li data-tool="github"><a class="tool-logo" href="https://github.com/rugvedb133/ultrasonic-point-cloud">Page source on GitHub</a></li>
         </ul>
       </nav>
     </div>

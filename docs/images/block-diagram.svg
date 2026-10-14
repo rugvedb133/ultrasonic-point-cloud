@@ -10,7 +10,7 @@
       <path d="M0 0L10 5L0 10Z" fill="#b4b9d8"/>
     </marker>
     <filter id="soft" x="-20%" y="-60%" width="140%" height="220%">
-      <feGaussianBlur stdDeviation="3"/>
+      <feGaussianBlur stdDeviation="5"/>
     </filter>
   </defs>
   <g stroke="#b4b9d8" stroke-width="2.5" fill="none" marker-end="url(#a)">
@@ -22,9 +22,11 @@
     <path d="M845 194V246"/>
   </g>
   <path d="M410 162H460" stroke="#b4b9d8" stroke-width="2.5" fill="none" marker-start="url(#a)" marker-end="url(#a)"/>
-  <path d="M190 162H240" stroke="#b4b9d8" stroke-width="2.5" fill="none" stroke-dasharray="6 6" marker-start="url(#a)" marker-end="url(#a)">
+  <g>
     <title>Mechanical link: the sensor is mounted on the motors, so it turns with them</title>
-  </path>
+    <path d="M190 162H240" stroke="#b4b9d8" stroke-width="2.5" fill="none" stroke-dasharray="3 3" marker-start="url(#a)" marker-end="url(#a)"/>
+    <text x="30" y="318" font-size="14" fill="#b4b9d8" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Dotted line: the sensor is mounted on the motors, so it turns with them.</text>
+  </g>
   <g>
     <title>Power supply: feeds the motors, the sensor and the microcontroller</title>
     <rect x="460" y="20" width="170" height="64" rx="10" fill="#2a2c4a" stroke="#b4b9d8" stroke-width="3"/>
@@ -57,8 +59,7 @@
   </g>
   <g>
     <title>Serial link: carries the distance and angle readings to the PC</title>
-    <rect x="644" y="143" width="102" height="38" rx="14" fill="#3b3e66" filter="url(#soft)"/>
-    <text x="695" y="166" text-anchor="middle" font-size="15" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Serial link</text>
+    <rect x="644" y="143" width="102" height="38" rx="14" fill="#3b3e66" fill-opacity="0.6" filter="url(#soft)"/>
+    <text x="695" y="166" text-anchor="middle" font-size="15" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" style="filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.9));">Serial link</text>
   </g>
-  <text x="30" y="318" font-size="14" fill="#b4b9d8" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Dotted line: the sensor is mounted on the motors, so it turns with them.</text>
 </svg>
