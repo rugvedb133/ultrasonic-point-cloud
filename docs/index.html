@@ -85,44 +85,109 @@
         <p class="lede">Four off-the-shelf parts and three programs.</p>
         <ul class="cards">
           <li class="card" data-accent="blue">
-            <figure class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing"><object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below."><span>HC-SR04 ultrasonic sensor</span></object><figcaption>Drawing of the sensor module.</figcaption></figure>
+            <figure class="art-box" data-target="obj-card-hc-sr04" data-label="the HC-SR04 drawing">
+              <object id="obj-card-hc-sr04" class="art" data="images/hc-sr04.svg" type="image/svg+xml" role="img" aria-label="Drawing of the HC-SR04 ultrasonic sensor module: two round transducers on a blue board with four pins below.">
+                <span>HC-SR04 ultrasonic sensor</span>
+              </object>
+              <figcaption>Drawing of the sensor module.</figcaption>
+            </figure>
             <div class="body">
               <h3>HC-SR04 sensor</h3>
               <p>The cheap part, and the main reason our scans are approximate. Its beam is wide, and ultrasound diffracts more than laser light does.</p>
-              <dl><dt>Range</dt><dd>2 cm to 4 m</dd><dt>Supply</dt><dd>5 V, 15 mA</dd><dt>Beam</dt><dd>15°</dd><dt>Accuracy</dt><dd>up to 3 mm</dd></dl>
+              <dl>
+                <dt>Range</dt>
+                  <dd>2 cm to 4 m</dd>
+                <dt>Supply</dt>
+                  <dd>5 V, 15 mA</dd>
+                <dt>Beam</dt>
+                  <dd>15°</dd>
+                <dt>Accuracy</dt>
+                  <dd>up to 3 mm</dd>
+              </dl>
             </div>
           </li>
           <li class="card" data-accent="red" data-tool="ti">
-            <figure class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing"><object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers."><span>MSP430G2 LaunchPad</span></object><figcaption>Drawing of the LaunchPad.</figcaption></figure>
+            <figure class="art-box" data-target="obj-card-msp430-launchpad" data-label="the LaunchPad drawing">
+              <object id="obj-card-msp430-launchpad" class="art" data="images/msp430-launchpad.svg" type="image/svg+xml" role="img" aria-label="Drawing of the MSP430G2 LaunchPad: a red board with a USB connector, a 20-pin chip and two pin headers.">
+                <span>MSP430G2 LaunchPad</span>
+              </object>
+              <figcaption>Drawing of the LaunchPad.</figcaption>
+            </figure>
             <div class="body">
               <h3 class="tool-logo">TI MSP430G2 LaunchPad</h3>
               <p>The main processor. It had enough pins and memory to hold the readings, and a serial link to send them to the PC.</p>
-              <dl><dt>Chip</dt><dd>MSP430G2553</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>16 kB flash, 512 B SRAM</dd><dt>Extras</dt><dd>10-bit ADC, two 16-bit timers</dd></dl>
+              <dl>
+                <dt>Chip</dt>
+                  <dd>MSP430G2553</dd>
+                <dt>Clock</dt>
+                  <dd>16 MHz</dd>
+                <dt>Memory</dt>
+                  <dd>16 kB flash, 512 B SRAM</dd>
+                <dt>Extras</dt>
+                  <dd>10-bit ADC, two 16-bit timers</dd>
+              </dl>
             </div>
           </li>
           <li class="card" data-accent="green" data-tool="arduino">
-            <figure class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing"><object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers."><span>Arduino Uno</span></object><figcaption>Drawing of the Uno.</figcaption></figure>
+            <figure class="art-box" data-target="obj-card-arduino-uno" data-label="the Arduino Uno drawing">
+              <object id="obj-card-arduino-uno" class="art" data="images/arduino-uno.svg" type="image/svg+xml" role="img" aria-label="Drawing of an Arduino Uno: a teal board with a USB connector, a power jack and two pin headers.">
+                <span>Arduino Uno</span>
+              </object>
+              <figcaption>Drawing of the Uno.</figcaption>
+            </figure>
             <div class="body">
               <h3 class="tool-logo">Arduino Uno</h3>
               <p>Used for early sensor tests and for calibrating the servos.</p>
-              <dl><dt>Chip</dt><dd>ATmega328P</dd><dt>Clock</dt><dd>16 MHz</dd><dt>Memory</dt><dd>32 kB flash, 2 kB SRAM</dd><dt>PWM</dt><dd>6 of 14 digital pins</dd></dl>
+              <dl>
+                <dt>Chip</dt>
+                  <dd>ATmega328P</dd>
+                <dt>Clock</dt>
+                  <dd>16 MHz</dd>
+                <dt>Memory</dt>
+                  <dd>32 kB flash, 2 kB SRAM</dd>
+                <dt>PWM</dt>
+                  <dd>6 of 14 digital pins</dd>
+              </dl>
             </div>
           </li>
           <li class="card" data-accent="orange">
-            <figure class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing"><object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires."><span>Pan and tilt mount</span></object><figcaption>Drawing of the pan/tilt kit.</figcaption></figure>
+            <figure class="art-box" data-target="obj-card-pan-tilt-mount" data-label="the pan/tilt mount drawing">
+              <object id="obj-card-pan-tilt-mount" class="art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of a pan and tilt mount: two blue micro servos in a black bracket on a base plate, with coloured wires.">
+                <span>Pan and tilt mount</span>
+              </object>
+              <figcaption>Drawing of the pan/tilt kit.</figcaption>
+            </figure>
             <div class="body">
               <h3>Pan/tilt mount</h3>
               <p>Two micro servos in a kit. The lower one pans, the upper one tilts, and PWM pulses from the board set the angles. Its wobble limits how sharp a scan can be.</p>
-              <dl><dt>Pan</dt><dd>360°</dd><dt>Tilt</dt><dd>180°</dd><dt>Control</dt><dd>PWM pulses</dd><dt>Servos</dt><dd>two 9 g micro</dd></dl>
+              <dl>
+                <dt>Pan</dt>
+                  <dd>360°</dd>
+                <dt>Tilt</dt>
+                  <dd>180°</dd>
+                <dt>Control</dt>
+                  <dd>PWM pulses</dd>
+                <dt>Servos</dt>
+                  <dd>two 9 g micro</dd>
+              </dl>
             </div>
           </li>
         </ul>
 
         <h3 class="sub">Software</h3>
         <ul class="tools">
-          <li data-tool="ccs"><strong class="tool-logo">Code Composer Studio</strong><span>Firmware for the MSP430, written in embedded C.</span></li>
-          <li data-tool="arduino"><strong class="tool-logo">Arduino IDE</strong><span>Early sensor tests and servo calibration on the Uno.</span></li>
-          <li data-tool="python"><strong class="tool-logo">Python</strong><span>Turns each distance and its two angles into x, y, z, then plots the points.</span></li>
+          <li data-tool="ccs">
+            <strong class="tool-logo">Code Composer Studio</strong>
+            <span>Firmware for the MSP430, written in embedded C.</span>
+          </li>
+          <li data-tool="arduino">
+            <strong class="tool-logo">Arduino IDE</strong>
+            <span>Early sensor tests and servo calibration on the Uno.</span>
+          </li>
+          <li data-tool="python">
+            <strong class="tool-logo">Python</strong>
+            <span>Turns each distance and its two angles into x, y, z, then plots the points.</span>
+          </li>
         </ul>
       </div>
     </section>
@@ -151,7 +216,13 @@
 
         <h3 class="sub">From angles to x, y, z</h3>
         <p>The sensor only knows distance. The angles come from the servos. Treat the sensor as sitting at the origin, with tilt &phi; measured from the vertical and pan &theta; measured around it. Then:</p>
-        <p class="formula"><code>x = r &middot; sin &phi; &middot; cos &theta;<br>y = r &middot; sin &phi; &middot; sin &theta;<br>z = r &middot; cos &phi;</code></p>
+        <p class="formula">
+          <code>
+            x = r &middot; sin &phi; &middot; cos &theta;<br>
+            y = r &middot; sin &phi; &middot; sin &theta;<br>
+            z = r &middot; cos &phi;
+          </code>
+        </p>
         <p class="small">This is the standard convention. Where the zero positions sit on the real rig depends on how the servos were mounted.</p>
 
         <div class="panel">
@@ -172,9 +243,21 @@
           <div class="viewer" id="coords-viewer" hidden>
             <div class="scene" id="scene"></div>
             <div class="controls">
-              <div class="slider"><label for="pan">Pan &theta;</label><input id="pan" type="range" min="0" max="360" value="40"><output id="pan-out" for="pan"></output></div>
-              <div class="slider"><label for="tilt">Tilt &phi;</label><input id="tilt" type="range" min="0" max="180" value="60"><output id="tilt-out" for="tilt"></output></div>
-              <div class="slider"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="200"><output id="dist-out" for="dist"></output></div>
+              <div class="slider">
+                <label for="pan">Pan &theta;</label>
+                <input id="pan" type="range" min="0" max="360" value="40">
+                <output id="pan-out" for="pan"></output>
+              </div>
+              <div class="slider">
+                <label for="tilt">Tilt &phi;</label>
+                <input id="tilt" type="range" min="0" max="180" value="60">
+                <output id="tilt-out" for="tilt"></output>
+              </div>
+              <div class="slider">
+                <label for="dist">Distance r</label>
+                <input id="dist" type="range" min="2" max="400" value="200">
+                <output id="dist-out" for="dist"></output>
+              </div>
               <p class="readout" id="xyz"></p>
               <div class="row">
                 <button class="btn alt" id="drop" type="button">Drop a point here</button>
@@ -194,14 +277,19 @@
 
         <div class="mount-grid">
           <figure class="mount-fig" data-target="obj-mount" data-label="the pan/tilt mount drawing">
-            <object id="obj-mount" class="mount-art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."><img src="images/pan-tilt-mount.svg" width="480" height="300" alt="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires."></object>
+            <object id="obj-mount" class="mount-art" data="images/pan-tilt-mount.svg" type="image/svg+xml" role="img" aria-label="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires.">
+              <img src="images/pan-tilt-mount.svg" width="480" height="300" alt="Drawing of the pan and tilt kit: two blue micro servos in a black bracket on a base plate, with a bundle of coloured wires.">
+            </object>
             <figcaption>A drawing of the kit we used, not a photo of our build.</figcaption>
           </figure>
           <div>
             <dl class="spec">
-              <dt>Pan</dt><dd>The lower servo turns the whole mount through 360&deg;, covering the horizontal plane.</dd>
-              <dt>Tilt</dt><dd>The upper servo swings the sensor through 180&deg; vertically.</dd>
-              <dt>Control</dt><dd>The board sends PWM pulses, and the pulse width sets the angle.</dd>
+              <dt>Pan</dt>
+                <dd>The lower servo turns the whole mount through 360&deg;, covering the horizontal plane.</dd>
+              <dt>Tilt</dt>
+                <dd>The upper servo swings the sensor through 180&deg; vertically.</dd>
+              <dt>Control</dt>
+                <dd>The board sends PWM pulses, and the pulse width sets the angle.</dd>
             </dl>
             <p class="small">We calibrated the servos on the Arduino Uno first, so we knew what angle each pulse width gave before moving to the LaunchPad.</p>
           </div>
@@ -209,10 +297,22 @@
 
         <h3 class="sub">What connects to what</h3>
         <ul class="tools">
-          <li><strong>Power</strong><span>One supply feeds the board, the sensor and the servos.</span></li>
-          <li><strong>Servos</strong><span>Three wires each: signal, power and ground. The signal wire carries the PWM pulses from the board.</span></li>
-          <li><strong>Sensor</strong><span>The board triggers the HC-SR04 and times its echo to get a distance.</span></li>
-          <li><strong>PC</strong><span>The readings and both angles leave the board over a serial link.</span></li>
+          <li>
+            <strong>Power</strong>
+            <span>One supply feeds the board, the sensor and the servos.</span>
+          </li>
+          <li>
+            <strong>Servos</strong>
+            <span>Three wires each: signal, power and ground. The signal wire carries the PWM pulses from the board.</span>
+          </li>
+          <li>
+            <strong>Sensor</strong>
+            <span>The board triggers the HC-SR04 and times its echo to get a distance.</span>
+          </li>
+          <li>
+            <strong>PC</strong>
+            <span>The readings and both angles leave the board over a serial link.</span>
+          </li>
         </ul>
       </div>
     </section>
@@ -225,14 +325,25 @@
 
         <h3 class="sub">Why the result is approximate</h3>
         <ul class="tools">
-          <li><strong>A wide beam</strong><span>The HC-SR04 does not look at a point. Each reading covers a cone, so fine detail smaller than the beam gets blurred together.</span></li>
-          <li><strong>A wobbly mount</strong><span>Our report names the mount's stability, along with the sensor's accuracy, as the limit on resolution. Two small servos in a kit can only hold an angle so well.</span></li>
-          <li><strong>One point at a time</strong><span>With a single sensor, a scan takes a while. Several sensors, each covering part of the sphere, would cut the time by a factor of however many we add.</span></li>
+          <li>
+            <strong>A wide beam</strong>
+            <span>The HC-SR04 does not look at a point. Each reading covers a cone, so fine detail smaller than the beam gets blurred together.</span>
+          </li>
+          <li>
+            <strong>A wobbly mount</strong>
+            <span>Our report names the mount's stability, along with the sensor's accuracy, as the limit on resolution. Two small servos in a kit can only hold an angle so well.</span>
+          </li>
+          <li>
+            <strong>One point at a time</strong>
+            <span>With a single sensor, a scan takes a while. Several sensors, each covering part of the sphere, would cut the time by a factor of however many we add.</span>
+          </li>
         </ul>
 
         <figure class="diagram beam" data-target="obj-beam" data-label="the beam diagram">
           <div class="scroll-x">
-            <object id="obj-beam" data="images/beam-spread.svg" type="image/svg+xml" width="800" height="300" role="img" aria-label="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."><img src="images/beam-spread.svg" width="800" height="300" alt="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres."></object>
+            <object id="obj-beam" data="images/beam-spread.svg" type="image/svg+xml" width="800" height="300" role="img" aria-label="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres.">
+              <img src="images/beam-spread.svg" width="800" height="300" alt="Top view of the sensor's 15 degree beam, drawn to scale. It is about 26 centimetres wide at 1 metre, 53 centimetres at 2 metres and 105 centimetres at 4 metres.">
+            </object>
           </div>
           <figcaption>The 15&deg; beam from above, drawn to scale. Widths assume 15&deg; is the full cone angle.</figcaption>
         </figure>

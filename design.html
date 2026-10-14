@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,76 +8,299 @@
 <title>Design: ultrasonic-point-cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-:root{
-  --floor:#3b3e66;--void:#1f2138;--point:#f2f4ff;--pcb:#1d6fb8;--red:#d3222a;--wire:#f08a24;--ax-g:#35d07f;--ax-b:#6f86ff;
-  --bg:#2a2c4a;--surface:#34375a;--ink:#eceefb;--muted:#b4b9d8;--line:#4b4e7a;
-  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",sans-serif;--mono:"JetBrains Mono",Consolas,monospace;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.6 var(--body)}
-h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
-a,button,input{outline-offset:3px}
-:focus-visible{outline:3px solid var(--wire)}
-.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
-.note{background:var(--void);color:var(--ink);padding:.7rem 1.25rem;font-size:.95rem}
-.note b{font-family:var(--head)}
+:root {
+  --floor: #3b3e66;
+  --void: #1f2138;
+  --point: #f2f4ff;
+  --pcb: #1d6fb8;
+  --red: #d3222a;
+  --wire: #f08a24;
+  --ax-g: #35d07f;
+  --ax-b: #6f86ff;
+  --bg: #2a2c4a;
+  --surface: #34375a;
+  --ink: #eceefb;
+  --muted: #b4b9d8;
+  --line: #4b4e7a;
+  --head: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px) }
+*, *::before, *::after{ box-sizing:border-box }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.05rem/1.6 var(--body)
+}
+h1, h2, h3 {
+  font-family: var(--head);
+  line-height: 1.1;
+  margin: 0
+}
+a, button, input { outline-offset: 3px }
+:focus-visible { outline: 3px solid var(--wire) }
+.wrap {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.25rem
+}
+.note {
+  background: var(--void);
+  color: var(--ink);
+  padding: .7rem 1.25rem;
+  font-size: .95rem
+}
+.note b { font-family: var(--head) }
 /* hero */
-.hero{background:linear-gradient(var(--void) 0,var(--void) 38%,var(--floor) 100%);color:var(--point);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:38% 0 0;background:
-  repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 1px,transparent 1px 64px),
-  repeating-linear-gradient(0deg,rgba(255,255,255,.13) 0 1px,transparent 1px 36px);
-  transform:perspective(420px) rotateX(58deg);transform-origin:top;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding-top:4rem;padding-bottom:4rem}
-.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;letter-spacing:-.02em}
-.hero p{max-width:34rem;color:#d3d7f0;margin:1rem 0 1.4rem}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
-.chips li{border-left:4px solid var(--pcb);background:rgba(255,255,255,.08);padding:.25rem .7rem;font-size:.95rem}
-.chips li:nth-child(2){border-color:var(--red)}.chips li:nth-child(3){border-color:var(--wire)}
-.cloud{width:100%;height:auto}
-.axes{position:absolute;left:1.25rem;bottom:1rem;width:56px;height:56px}
+.hero {
+  background: linear-gradient(var(--void) 0, var(--void) 38%, var(--floor) 100%);
+  color: var(--point);
+  position: relative;
+  overflow: hidden
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 38% 0 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .13) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .13) 0 1px, transparent 1px 36px);
+  transform: perspective(420px) rotateX(58deg);
+  transform-origin: top;
+  pointer-events: none
+}
+.hero .wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -.02em
+}
+.hero p {
+  max-width: 34rem;
+  color: #d3d7f0;
+  margin: 1rem 0 1.4rem
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+.chips li {
+  border-left: 4px solid var(--pcb);
+  background: rgba(255, 255, 255, .08);
+  padding: .25rem .7rem;
+  font-size: .95rem
+}
+.chips li:nth-child(2) { border-color: var(--red) }
+.chips li:nth-child(3) { border-color: var(--wire) }
+.cloud {
+  width: 100%;
+  height: auto
+}
+.axes {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1rem;
+  width: 56px;
+  height: 56px
+}
+
 /* sections */
-section{padding:3.5rem 0;border-top:1px solid var(--line)}
-section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
-.lede{color:var(--muted);max-width:40rem;margin:0 0 1.6rem}
-.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.7rem;padding:0;margin:0;list-style:none}
-.sw li{border:1px solid var(--line);background:var(--surface)}
-.sw i{display:block;height:3.2rem}
-.sw span{display:block;padding:.45rem .6rem;font-size:.85rem;color:var(--muted)}
-.sw b{display:block;color:var(--ink)}
-.type{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem}
-.type div{border:1px solid var(--line);background:var(--surface);padding:1rem 1.2rem}
-.type small{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.2rem}
-.card{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--pcb)}
-.card:nth-child(2){border-top-color:var(--red)}.card:nth-child(3){border-top-color:var(--ax-g)}
-.card .art{height:7rem;display:grid;place-items:center;background:var(--bg);color:var(--muted);font-size:.85rem}
-.card div.b{padding:1rem 1.1rem}
-.card h3{font-size:1.2rem;margin-bottom:.3rem}
-.card dl{display:grid;grid-template-columns:auto 1fr;gap:.15rem .8rem;margin:.7rem 0 0;font-size:.92rem}
-.card dt{color:var(--muted)}.card dd{margin:0;font-family:var(--mono);font-size:.85rem}
+section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--line)
+}
+section>.wrap>h2 {
+  font-size: 1.9rem;
+  margin-bottom: .4rem
+}
+.lede {
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 1.6rem
+}
+.sw {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: .7rem;
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+.sw li {
+  border: 1px solid var(--line);
+  background: var(--surface)
+}
+.sw i {
+  display: block;
+  height: 3.2rem
+}
+.sw span {
+  display: block;
+  padding: .45rem .6rem;
+  font-size: .85rem;
+  color: var(--muted)
+}
+.sw b {
+  display: block;
+  color: var(--ink)
+}
+.type {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem
+}
+.type div {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1rem 1.2rem
+}
+.type small { color: var(--muted) }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.2rem
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--pcb)
+}
+.card:nth-child(2) { border-top-color: var(--red) }
+.card:nth-child(3) { border-top-color: var(--ax-g) }
+.card .art {
+  height: 7rem;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: .85rem
+}
+.card div.b { padding: 1rem 1.1rem }
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: .3rem
+}
+.card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .15rem .8rem;
+  margin: .7rem 0 0;
+  font-size: .92rem
+}
+.card dt { color: var(--muted) }
+.card dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .85rem
+}
 /* diagram panel */
-.panel{border:1px solid var(--line);background:var(--surface)}
-.bar{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.7rem 1rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.btn{font:700 .95rem var(--body);background:var(--pcb);color:#fff;border:0;padding:.6rem 1.1rem;cursor:pointer}
-.btn:hover{filter:brightness(1.12)}
-.stage{padding:1.2rem}
-.stage svg{width:100%;height:auto;display:block}
-#viewer{display:none;background:var(--void);color:var(--point);padding:1.2rem}
-#viewer.on{display:block}
-.sl{display:grid;grid-template-columns:5rem 1fr 4rem;gap:.8rem;align-items:center;margin:.6rem 0}
-.sl input{width:100%;accent-color:var(--wire)}
-.out{font-family:var(--mono);color:var(--ax-g);margin:1rem 0 0}
+.panel {
+  border: 1px solid var(--line);
+  background: var(--surface)
+}
+.bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap
+}
+.btn {
+  font: 700 .95rem var(--body);
+  background: var(--pcb);
+  color: #fff;
+  border: 0;
+  padding: .6rem 1.1rem;
+  cursor: pointer
+}
+.btn:hover { filter: brightness(1.12) }
+.stage { padding: 1.2rem }
+.stage svg {
+  width: 100%;
+  height: auto;
+  display: block
+}
+#viewer {
+  display: none;
+  background: var(--void);
+  color: var(--point);
+  padding: 1.2rem
+}
+#viewer.on { display: block }
+.sl {
+  display: grid;
+  grid-template-columns: 5rem 1fr 4rem;
+  gap: .8rem;
+  align-items: center;
+  margin: .6rem 0
+}
+.sl input {
+  width: 100%;
+  accent-color: var(--wire)
+}
+.out {
+  font-family: var(--mono);
+  color: var(--ax-g);
+  margin: 1rem 0 0
+}
 /* reflection */
-.refl{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.4rem}
-.refl blockquote{margin:0;padding:.2rem 0 .2rem 1.1rem;border-left:5px solid var(--wire)}
-.refl h3{font-size:1.15rem;margin-bottom:.3rem}
-.fav{display:flex;gap:1.5rem;align-items:flex-end;flex-wrap:wrap}
-.fav figure{margin:0;text-align:center;color:var(--muted);font-size:.85rem}
-@media (max-width:700px){.hero .wrap{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.refl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.4rem
+}
+.refl blockquote {
+  margin: 0;
+  padding: .2rem 0 .2rem 1.1rem;
+  border-left: 5px solid var(--wire)
+}
+.refl h3 {
+  font-size: 1.15rem;
+  margin-bottom: .3rem
+}
+.fav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap
+}
+.fav figure {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem
+}
+@media (max-width:700px) {
+  .hero .wrap { grid-template-columns: 1fr }
+}
+@media (prefers-reduced-motion:reduce) {
+  * {
+    transition: none !important;
+    animation: none !important
+  }
+}
 </style>
 </head>
+
 <body>
 <p class="note"><b>Design preview, not the real site</b>: Placeholder copy and drawn stand-ins.</p>
 
@@ -85,127 +309,247 @@ section>.wrap>h2{font-size:1.9rem;margin-bottom:.4rem}
     <div>
       <h1>A 3D scan from one ultrasonic sensor</h1>
       <p>We put a low-cost HC-SR04 on a pan/tilt mount, swept it across a scene, and turned every distance reading into a point in space.</p>
-      <ul class="chips"><li>HC-SR04</li><li>MSP430G2 LaunchPad</li><li>Python</li></ul>
+      <ul class="chips">
+        <li>HC-SR04</li>
+        <li>MSP430G2 LaunchPad</li>
+        <li>Python</li>
+      </ul>
     </div>
     <svg class="cloud" id="cloud" viewBox="0 0 400 300" role="img" aria-label="Sample point cloud drawn as columns of white dots: an arc-shaped object in front of a flat wall"></svg>
   </div>
-  <svg class="axes" viewBox="0 0 56 56" aria-hidden="true"><path d="M8 48 L48 38" stroke="#e0383f" stroke-width="3"/><path d="M8 48 L8 6" stroke="#6f86ff" stroke-width="3"/><path d="M8 48 L22 54" stroke="#35d07f" stroke-width="3"/></svg>
+  <svg class="axes" viewBox="0 0 56 56" aria-hidden="true">
+    <path d="M8 48 L48 38" stroke="#e0383f" stroke-width="3"/>
+    <path d="M8 48 L8 6" stroke="#6f86ff" stroke-width="3"/>
+    <path d="M8 48 L22 54" stroke="#35d07f" stroke-width="3"/>
+  </svg>
 </header>
 
 <main>
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>Palette from the real hardware</h2>
   <p class="lede">One dark theme throughout. The hero copies the 3D viewer: navy floor, white points, red/green/blue axes. Accents are the sensor board, the LaunchPad, and the servo wires.</p>
   <ul class="sw">
-    <li><i style="background:#1f2138"></i><span><b>Viewer void</b>#1f2138</span></li>
-    <li><i style="background:#3b3e66"></i><span><b>Page and floor</b>#2a2c4a to #3b3e66</span></li>
-    <li><i style="background:#f2f4ff;border-bottom:1px solid #ccc"></i><span><b>Point white</b>#f2f4ff</span></li>
-    <li><i style="background:#1d6fb8"></i><span><b>HC-SR04 blue</b>#1d6fb8</span></li>
-    <li><i style="background:#d3222a"></i><span><b>LaunchPad red</b>#d3222a</span></li>
-    <li><i style="background:#f08a24"></i><span><b>Servo wire</b>#f08a24</span></li>
-    <li><i style="background:#35d07f"></i><span><b>Axis green</b>#35d07f</span></li>
+    <li>
+      <i style="background:#1f2138"></i>
+      <span><b>Viewer void</b>#1f2138</span>
+    </li>
+    <li>
+      <i style="background:#3b3e66"></i>
+      <span><b>Page and floor</b>#2a2c4a to #3b3e66</span>
+    </li>
+    <li>
+      <i style="background:#f2f4ff;border-bottom:1px solid #ccc"></i>
+      <span><b>Point white</b>#f2f4ff</span>
+    </li>
+    <li>
+      <i style="background:#1d6fb8"></i>
+      <span><b>HC-SR04 blue</b>#1d6fb8</span>
+    </li>
+    <li>
+      <i style="background:#d3222a"></i>
+      <span><b>LaunchPad red</b>#d3222a</span>
+    </li>
+    <li>
+      <i style="background:#f08a24"></i>
+      <span><b>Servo wire</b>#f08a24</span>
+    </li>
+    <li>
+      <i style="background:#35d07f"></i>
+      <span><b>Axis green</b>#35d07f</span>
+    </li>
   </ul>
-</div></section>
+</div>
+</section>
 
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>Type</h2>
   <p class="lede">Headings have some personality; body text is built for legibility; mono is reserved for numbers the rig produces.</p>
   <div class="type">
-    <div><h3 style="font-size:1.8rem;font-weight:800">Bricolage Grotesque</h3><small>Headings</small></div>
-    <div><p style="margin:0">Atkinson Hyperlegible: made for readability, so a long paragraph about servo jitter stays easy on the eyes.</p><small>Body</small></div>
-    <div><p style="margin:0;font-family:var(--mono)">r = 142.0 cm<br>x = 61.3, y = 98.7, z = 80.2</p><small>JetBrains Mono, for readouts only</small></div>
+    <div>
+      <h3 style="font-size:1.8rem;font-weight:800">Bricolage Grotesque</h3><small>Headings</small>
+    </div>
+    <div>
+      <p style="margin:0">Atkinson Hyperlegible: made for readability, so a long paragraph about servo jitter stays easy on the eyes.</p><small>Body</small>
+    </div>
+    <div>
+      <p style="margin:0;font-family:var(--mono)">r=142.0 cm<br>x=61.3, y=98.7, z=80.2</p><small>JetBrains Mono, for readouts only</small>
+    </div>
   </div>
-</div></section>
+</div>
+</section>
 
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>Hardware cards</h2>
   <p class="lede">Each part gets a card with a colour from the real board. Illustrations will be SVG drawings, loaded with &lt;object&gt; so their tooltips work.</p>
   <div class="cards">
-    <article class="card"><div class="art">SVG drawing here</div><div class="b"><h3>HC-SR04 sensor</h3><p style="margin:0">Cheap, 15° beam. The reason scans are approximate.</p><dl><dt>Range</dt><dd>2 cm to 4 m</dd><dt>Supply</dt><dd>5 V, 15 mA</dd></dl></div></article>
-    <article class="card"><div class="art">SVG drawing here</div><div class="b"><h3>MSP430G2 LaunchPad</h3><p style="margin:0">Reads the sensor, drives the servos, talks to the PC.</p><dl><dt>Memory</dt><dd>16 kB flash</dd><dt>Clock</dt><dd>16 MHz</dd></dl></div></article>
-    <article class="card"><div class="art">SVG drawing here</div><div class="b"><h3>Pan/tilt mount</h3><p style="margin:0">Two micro servos aiming the sensor.</p><dl><dt>Pan</dt><dd>360°</dd><dt>Tilt</dt><dd>180°</dd></dl></div></article>
+    <article class="card">
+      <div class="art">SVG drawing here</div>
+      <div class="b">
+        <h3>HC-SR04 sensor</h3>
+        <p style="margin:0">Cheap, 15° beam. The reason scans are approximate.</p>
+        <dl>
+          <dt>Range</dt>
+          <dd>2 cm to 4 m</dd>
+          <dt>Supply</dt>
+          <dd>5 V, 15 mA</dd>
+        </dl>
+      </div>
+    </article>
+    <article class="card">
+      <div class="art">SVG drawing here</div>
+      <div class="b">
+        <h3>MSP430G2 LaunchPad</h3>
+        <p style="margin:0">Reads the sensor, drives the servos, talks to the PC.</p>
+        <dl>
+          <dt>Memory</dt>
+          <dd>16 kB flash</dd>
+          <dt>Clock</dt>
+          <dd>16 MHz</dd>
+        </dl>
+      </div>
+    </article>
+    <article class="card">
+      <div class="art">SVG drawing here</div>
+      <div class="b">
+        <h3>Pan/tilt mount</h3>
+        <p style="margin:0">Two micro servos aiming the sensor.</p>
+        <dl>
+          <dt>Pan</dt>
+          <dd>360°</dd>
+          <dt>Tilt</dt>
+          <dd>180°</dd>
+        </dl>
+      </div>
+    </article>
   </div>
-</div></section>
+</div>
+</section>
 
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>From angles to points</h2>
   <p class="lede">The page opens on the static diagram, drawn with faint 3D axes and floor and wall grids. The button switches to the live viewer and back.</p>
   <div class="panel">
-    <div class="bar"><span>Spherical coordinates: distance and two angles give x, y, z</span><button class="btn" id="tog" type="button" aria-controls="viewer" aria-expanded="false">Start interactive viewer</button></div>
+    <div class="bar">
+      <span>Spherical coordinates: distance and two angles give x, y, z</span>
+      <button class="btn" id="tog" type="button" aria-controls="viewer" aria-expanded="false">Start interactive viewer</button>
+    </div>
     <div class="stage" id="static">
       <svg viewBox="0 0 360 200" role="img" aria-label="Diagram: a point at distance r, with tilt angle phi from the vertical z axis and pan angle theta in the horizontal plane, drawn over a faint 3D grid">
         <g id="grid" stroke="#fff" stroke-opacity=".13" stroke-width="1" fill="none"></g>
-        <g fill="none" stroke-width="2"><path d="M60 160 L200 160" stroke="#35d07f" stroke-opacity=".7"/><path d="M60 160 L20 185" stroke="#e0383f" stroke-opacity=".7"/><path d="M60 160 V20" stroke="#6f86ff" stroke-opacity=".7"/><path d="M60 160 L240 50" stroke="#f08a24" stroke-width="3"/><path d="M240 50 V138 L60 160" stroke="#b4b9d8" stroke-dasharray="5 5" stroke-width="1.5"/></g>
-        <circle cx="240" cy="50" r="6" fill="#d3222a"/>
-        <g fill="#d3d7f0" font-size="16" font-family="Atkinson Hyperlegible, sans-serif"><text x="68" y="28">z</text><text x="206" y="166">y</text><text x="20" y="176">x</text><text x="140" y="94" fill="#f08a24">r</text><text x="248" y="48">(x, y, z)</text><text x="70" y="128">&#966;</text><text x="98" y="174">&#952;</text></g>
+        <g fill="none" stroke-width="2">
+          <path d="M60 160 L200 160" stroke="#35d07f" stroke-opacity=".7" />
+          <path d="M60 160 L20 185" stroke="#e0383f" stroke-opacity=".7" />
+          <path d="M60 160 V20" stroke="#6f86ff" stroke-opacity=".7" />
+          <path d="M60 160 L240 50" stroke="#f08a24" stroke-width="3" />
+          <path d="M240 50 V138 L60 160" stroke="#b4b9d8" stroke-dasharray="5 5" stroke-width="1.5" />
+        </g>
+        <circle cx="240" cy="50" r="6" fill="#d3222a" />
+        <g fill="#d3d7f0" font-size="16" font-family="Atkinson Hyperlegible, sans-serif">
+          <text x="68" y="28">z</text>
+          <text x="206" y="166">y</text>
+          <text x="20" y="176">x</text>
+          <text x="140" y="94" fill="#f08a24">r</text>
+          <text x="248" y="48">(x, y, z)</text>
+          <text x="70" y="128">&#966;</text>
+          <text x="98" y="174">&#952;</text>
+        </g>
       </svg>
     </div>
     <div id="viewer" role="group" aria-label="Interactive viewer">
-      <div class="sl"><label for="pan">Pan θ</label><input id="pan" type="range" min="0" max="360" value="40"><output id="po">40°</output></div>
-      <div class="sl"><label for="tilt">Tilt φ</label><input id="tilt" type="range" min="0" max="180" value="60"><output id="to">60°</output></div>
-      <div class="sl"><label for="dist">Distance r</label><input id="dist" type="range" min="2" max="400" value="140"><output id="do">140</output></div>
+      <div class="sl">
+        <label for="pan">Pan θ</label>
+        <input id="pan" type="range" min="0" max="360" value="40">
+        <output id="po">40°</output>
+      </div>
+      <div class="sl">
+        <label for="tilt">Tilt φ</label>
+        <input id="tilt" type="range" min="0" max="180" value="60">
+        <output id="to">60°</output>
+      </div>
+      <div class="sl">
+        <label for="dist">Distance r</label>
+        <input id="dist" type="range" min="2" max="400" value="140">
+        <output id="do">140</output>
+      </div>
       <p class="out" id="xyz" aria-live="polite"></p>
       <p style="color:var(--muted);margin:.6rem 0 0;font-size:.9rem">In the real build this panel gets a 3D scene (three.js, loaded only when you press the button).</p>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>What we learned</h2>
   <p class="lede">Plain, first-person, honest about trade-offs. Placeholder text.</p>
   <div class="refl">
-    <blockquote><h3>The sensor sets the limit</h3><p style="margin:0">A 15° beam is wide for mapping. Edges came out soft, and we stopped blaming the code for it.</p></blockquote>
-    <blockquote><h3>We changed boards mid-project</h3><p style="margin:0">Arduino got us started; the MSP430 LaunchPad became the main board later.</p></blockquote>
+    <blockquote>
+      <h3>The sensor sets the limit</h3>
+      <p style="margin:0">A 15° beam is wide for mapping. Edges came out soft, and we stopped blaming the code for it.</p>
+    </blockquote>
+    <blockquote>
+      <h3>We changed boards mid-project</h3>
+      <p style="margin:0">Arduino got us started; the MSP430 LaunchPad became the main board later.</p>
+    </blockquote>
   </div>
-</div></section>
+</div>
+</section>
 
-<section><div class="wrap">
+<section>
+<div class="wrap">
   <h2>Favicon concept</h2>
   <p class="lede">A fan of dots spreading from the sensor, the same motif as the hero. It has to read at 16 px, so it uses few, large dots.</p>
   <div class="fav" id="fav"></div>
-</div></section>
+</div>
+</section>
 </main>
 
 <script>
 // hero point cloud: wall columns + a half-cylinder, simple perspective
 (function(){
-  var s=document.getElementById('cloud'),ns='http://www.w3.org/2000/svg',pts=[],i,j,a;
-  for(i=-5;i<=5;i++)for(j=0;j<14;j++)pts.push([i*.34+1.2,2.2,j*.12-.6]);
-  for(a=-1.4;a<=1.4;a+=.16)for(j=0;j<14;j++)pts.push([-1.1+Math.sin(a)*.6,1.4-Math.cos(a)*.6+.5,j*.09-.6]);
-  var r=.55,c=Math.cos(r),sn=Math.sin(r),out='';
-  pts.forEach(function(p){
-    var x=p[0]*c-p[1]*sn,y=p[0]*sn+p[1]*c,z=p[2],k=4.5/(4.5+y);
-    var X=200+x*k*95,Y=190-z*k*95+y*k*14;
+  var s=document.getElementById('cloud'), ns='http://www.w3.org/2000/svg', pts=[], i, j, a;
+  for (i=-5; i<=5; i++) for (j=0; j<14; j++) pts.push([i*.34+1.2, 2.2, j*.12-.6]);
+  for (a=-1.4; a<=1.4; a+=.16) for (j=0; j<14; j++) pts.push([-1.1+Math.sin(a)*.6, 1.4-Math.cos(a)*.6+.5, j*.09-.6]);
+  var r=.55, c=Math.cos(r), sn=Math.sin(r), out='';
+  pts.forEach(function (p) {
+    var x=p[0]*c-p[1]*sn, y=p[0]*sn+p[1]*c, z=p[2], k=4.5 / (4.5+y);
+    var X=200+x*k*95, Y=190-z*k*95+y*k*14;
     out+='<circle cx="'+X.toFixed(1)+'" cy="'+Y.toFixed(1)+'" r="'+(1.7*k).toFixed(2)+'" fill="#f2f4ff" opacity="'+(.55+.45*k).toFixed(2)+'"/>';
   });
   s.innerHTML=out;
   // favicon sizes
-  var f=document.getElementById('fav'),d='';
-  [[64,'64 px'],[32,'32 px'],[16,'16 px']].forEach(function(v){
-    d+='<figure><svg width="'+v[0]+'" height="'+v[0]+'" viewBox="0 0 64 64" role="img" aria-label="Favicon at '+v[1]+'"><rect width="64" height="64" rx="12" fill="#1f2138"/>'+
-    [[22,-.15],[22,-.55],[22,-.95],[36,-.1],[36,-.45],[36,-.8],[36,-1.15],[50,-.05],[50,-.35],[50,-.65],[50,-.95],[50,-1.25]].map(function(q){
-      return '<circle cx="'+(12+q[0]*Math.cos(q[1])).toFixed(1)+'" cy="'+(52+q[0]*Math.sin(q[1])).toFixed(1)+'" r="4" fill="#f2f4ff"/>';}).join('')+
-    '<path d="M12 52V45A7 7 0 0 1 18.06 55.5Z" fill="#e0383f"/><path d="M12 52L18.06 55.5A7 7 0 0 1 5.94 55.5Z" fill="#35d07f"/><path d="M12 52L5.94 55.5A7 7 0 0 1 12 45Z" fill="#6f86ff"/></svg><figcaption>'+v[1]+'</figcaption></figure>';
+  var f=document.getElementById('fav'), d='';
+  [[64, '64 px'], [32, '32 px'], [16, '16 px']].forEach(function (v) {
+    d+='<figure><svg width="'+v[0]+'" height="'+v[0]+'" viewBox="0 0 64 64" role="img" aria-label="Favicon at '+v[1]+'"><rect width="64" height="64" rx="12" fill="#1f2138"/>' +
+      [[22, -.15], [22, -.55], [22, -.95], [36, -.1], [36, -.45], [36, -.8], [36, -1.15], [50, -.05], [50, -.35], [50, -.65], [50, -.95], [50, -1.25]].map(function (q) {
+        return '<circle cx="'+(12+q[0]*Math.cos(q[1])).toFixed(1)+'" cy="'+(52+q[0]*Math.sin(q[1])).toFixed(1)+'" r="4" fill="#f2f4ff"/>';
+      }).join('') +
+      '<path d="M12 52V45A7 7 0 0 1 18.06 55.5Z" fill="#e0383f"/><path d="M12 52L18.06 55.5A7 7 0 0 1 5.94 55.5Z" fill="#35d07f"/><path d="M12 52L5.94 55.5A7 7 0 0 1 12 45Z" fill="#6f86ff"/></svg><figcaption>'+v[1]+'</figcaption></figure>';
   });
   f.innerHTML=d;
   // faint 3D grid for the static diagram
-  var g='',n;
-  for(n=0;n<=4;n++)g+='M'+(60-10*n)+' '+(160+6.25*n)+'h140'; for(n=0;n<=5;n++)g+='M'+(60+28*n)+' 160l-40 25M60 '+(160-28*n)+'h140M'+(60+28*n)+' 160v-140';
+  var g='', n;
+  for (n=0; n<=4; n++)g+='M'+(60-10*n)+' '+(160+6.25*n)+'h140'; for (n=0; n<=5; n++)g+='M'+(60+28*n)+' 160l-40 25M60 '+(160-28*n)+'h140M'+(60+28*n)+' 160v-140';
   document.getElementById('grid').innerHTML='<path d="'+g+'"/>';
-  // diagram toggle + readout
-  var tog=document.getElementById('tog'),st=document.getElementById('static'),vw=document.getElementById('viewer');
-  tog.addEventListener('click',function(){
+  // diagram toggle+readout
+  var tog=document.getElementById('tog'), st=document.getElementById('static'), vw=document.getElementById('viewer');
+  tog.addEventListener('click', function () {
     var on=!vw.classList.contains('on');
-    vw.classList.toggle('on',on);st.style.display=on?'none':'block';
-    tog.textContent=on?'Back to diagram':'Start interactive viewer';tog.setAttribute('aria-expanded',on);
+    vw.classList.toggle('on', on); st.style.display=on ? 'none' : 'block';
+    tog.textContent=on ? 'Back to diagram' : 'Start interactive viewer'; tog.setAttribute('aria-expanded', on);
   });
-  function upd(){
-    var t=+pan.value,p=+tilt.value,R=+dist.value,rad=Math.PI/180;
-    po.value=t+'°';to.value=p+'°';document.getElementById('do').value=R+' cm';
-    xyz.textContent='x = '+(R*Math.sin(p*rad)*Math.cos(t*rad)).toFixed(1)+'  y = '+(R*Math.sin(p*rad)*Math.sin(t*rad)).toFixed(1)+'  z = '+(R*Math.cos(p*rad)).toFixed(1);
+  function upd() {
+    var t=+pan.value, p=+tilt.value, R=+dist.value, rad=Math.PI / 180;
+    po.value=t+'°'; to.value=p+'°'; document.getElementById('do').value=R+' cm';
+    xyz.textContent='x='+(R*Math.sin(p*rad)*Math.cos(t*rad)).toFixed(1)+'  y='+(R*Math.sin(p*rad)*Math.sin(t*rad)).toFixed(1)+'  z='+(R*Math.cos(p*rad)).toFixed(1);
   }
-  [pan,tilt,dist].forEach(function(e){e.addEventListener('input',upd)});upd();
+  [pan, tilt, dist].forEach(function (e) { e.addEventListener('input', upd) }); upd();
 })();
 </script>
 </body>
+
 </html>
