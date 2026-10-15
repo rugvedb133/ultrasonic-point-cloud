@@ -5,65 +5,40 @@ A microcontroller reads the sensor's distance at each servo angle, and a Python 
 
 **Live page:** https://rugvedb133.github.io/ultrasonic-point-cloud/
 
-The page covers the hardware, how a distance becomes an x, y, z point (with an interactive viewer), the mount, what limits the result, a demo video, and what we learned.
-The scanner's source code isn't public, so this repository contains only the project page.
+This write-up page covers the hardware, how a distance becomes an x, y, z point (with an interactive viewer), the mount, what limits the result, and a demo video.
+The source code isn't public, so this repository contains only the project page.
 
 ## Built with
 
-**The scanner**
+**The project**
 
 ![HC-SR04 ultrasonic sensor](https://img.shields.io/badge/HC--SR04-1D6FB8)
-![MSP430](https://img.shields.io/badge/MSP430-CC0000)
-![Arduino](https://img.shields.io/badge/Arduino-00878F?logo=arduino&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![MSP430 Launchpad](https://custom-icon-badges.demolab.com/badge/TI_MSP430-CC0000?logo=texasinstruments&logoColor=fff)
+![Arduino Uno](https://img.shields.io/badge/Arduino_Uno-00878F?logo=arduino&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=FFD43B)
+![Arduino IDE](https://img.shields.io/badge/Arduino_IDE-00878F?logo=arduino&logoColor=white)
+![Code Composer Studio](https://custom-icon-badges.demolab.com/badge/CCStudio-CC0000?logo=ccstudio&logoColor=fff)
 
-**This page**
+**The writeup**
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?logo=css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=F7DF1E)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=323330)
 ![three.js](https://img.shields.io/badge/three.js-000000?logo=threedotjs&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?logo=githubpages&logoColor=white)
-
-## Repository layout
-
-```
-.
-├── docs/                 the published site (GitHub Pages: gh-pages branch, /docs folder)
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   ├── favicon.svg, favicon.ico, apple-touch-icon.png
-│   ├── .nojekyll
-│   └── images/           photos, diagrams and component drawings
-├── og.svg                editable source of the social preview image (docs/images/og.png)
-├── .gitattributes
-├── .gitignore
-└── README.md
-```
-
-## Run it locally
-
-There is no build step. Serve the `docs` folder with any static server, for example:
-
-```
-python -m http.server 3000 --directory docs
-```
-
-then open http://localhost:3000.
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?logo=githubpages&logoColor=white)
 
 ## How it is built
 
 - Plain HTML, CSS and JavaScript, with no framework and no build tooling.
 - The diagrams and component drawings are original SVGs loaded through `<object>`, so the hover tooltips inside them work.
-- **three.js** (MIT) is loaded from jsDelivr, pinned to a fixed version, only when a visitor presses "Start interactive viewer". Without it, the page shows the static diagram instead.
+- [three.js](https://threejs.org/) (MIT) is loaded from [jsDelivr](https://www.jsdelivr.com/), only when a visitor presses "Start interactive viewer". Without it, the page shows the static diagram instead.
 - One shared `<dialog>` powers the "Enlarge" view for images, diagrams, the viewer and the video.
 - The demo video is a YouTube embed served from `youtube-nocookie.com`.
 
 ## Credits
 
 - Tool and board icons come from [Simple Icons](https://simpleicons.org/) (CC0) through jsDelivr.
-The Texas Instruments and Code Composer Studio marks are inlined in `docs/styles.css` from the files on ti.com.
-- Fonts (Bricolage Grotesque, Atkinson Hyperlegible, JetBrains Mono) are served by Google Fonts under the SIL Open Font License.
+The Texas Instruments and Code Composer Studio marks are inlined in `docs/styles.css` from the files on [ti.com](https://www.ti.com/).
+- Fonts (Bricolage Grotesque, Atkinson Hyperlegible, JetBrains Mono) are served by [Google Fonts](https://fonts.google.com/) under the SIL Open Font License.
 - The badges above are made with [Shields.io](https://shields.io/).
 - Product and company names and logos belong to their owners. They are used here only to identify the tools we used.
