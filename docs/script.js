@@ -1,8 +1,8 @@
 'use strict';
 
 /* Interactive spherical-coordinates viewer.
-   three.js is only downloaded when the visitor clicks the button. If that
-   fails (offline, no WebGL, old browser) the static diagram stays visible. */
+   three.js is only downloaded when the visitor clicks the button.
+   If that fails (offline, no WebGL, old browser) the static diagram stays visible. */
 (function () {
   var THREE_URL = 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
   var btn = document.getElementById('viewer-toggle');
@@ -264,9 +264,9 @@
   document.getElementById('lightbox-close').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); }); // click on the backdrop
 
-  // The viewer and the video cannot be cloned (a copy of a canvas has no WebGL context, and a copy of the
-  // player would play a second video), so the real element moves into the dialog and a placeholder keeps its
-  // place on the page. It moves back when the dialog closes.
+  // The viewer and the video cannot be cloned (a copy of a canvas has no WebGL context,
+  // and a copy of the player would play a second video), so the real element moves into the dialog
+  // and a placeholder keeps its place on the page. It moves back when the dialog closes.
   // Note: the browser reloads an <iframe> whenever it moves, so an enlarged video starts again from the beginning.
   var restore = null;
 
@@ -315,8 +315,9 @@
   });
 })();
 
-/* Sideways-scrolling diagram boxes: keyboard users must be able to scroll them, so while a box actually
-   overflows it becomes a focusable, labelled region. When it fits, it is left out of the tab order. */
+/* Sideways-scrolling diagram boxes: keyboard users must be able to scroll them,
+   so while a box actually overflows it becomes a focusable, labelled region.
+   When it fits, it is left out of the tab order. */
 (function () {
   var boxes = Array.prototype.slice.call(document.querySelectorAll('.scroll-x'));
   if (!boxes.length) return;

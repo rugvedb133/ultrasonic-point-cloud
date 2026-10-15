@@ -1,21 +1,21 @@
-<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" xmlns:c2pa="http://c2pa.org/manifest">
+<svg xmlns="http://www.w3.org/2000/svg" style="color-scheme:dark" viewBox="0 0 64 64">
   <title>Ultrasonic Point Cloud</title>
-  <rect width="64" height="64" rx="12" fill="#1f2138"/>
+  <rect width="64" height="64" fill="#1f2138" rx="12"/>
   <g fill="#f2f4ff">
-    <circle cx="31.8" cy="49.0" r="4"/>
+    <circle cx="31.8" cy="49" r="4"/>
     <circle cx="29.1" cy="41.5" r="4"/>
     <circle cx="23.6" cy="35.7" r="4"/>
     <circle cx="43.8" cy="48.8" r="4"/>
     <circle cx="40.8" cy="38.1" r="4"/>
-    <circle cx="34.3" cy="29.0" r="4"/>
+    <circle cx="34.3" cy="29" r="4"/>
     <circle cx="25.1" cy="22.8" r="4"/>
     <circle cx="55.9" cy="49.8" r="4"/>
     <circle cx="53.3" cy="36.9" r="4"/>
-    <circle cx="47.0" cy="25.4" r="4"/>
+    <circle cx="47" cy="25.4" r="4"/>
     <circle cx="37.6" cy="16.2" r="4"/>
     <circle cx="25.9" cy="10.2" r="4"/>
   </g>
-  <path d="M12 52V45A7 7 0 0 1 18.06 55.5Z" fill="#e0383f"/>
-  <path d="M12 52L18.06 55.5A7 7 0 0 1 5.94 55.5Z" fill="#35d07f"/>
-  <path d="M12 52L5.94 55.5A7 7 0 0 1 12 45Z" fill="#6f86ff"/>
+  <path fill="#e0383f" d="M12 52v-7a7 7 0 0 1 6.06 10.5Z"/>
+  <path fill="#35d07f" d="m12 52 6.06 3.5a7 7 0 0 1-12.12 0Z"/>
+  <path fill="#6f86ff" d="m12 52-6.06 3.5A7 7 0 0 1 12 45Z"/>
 </svg>

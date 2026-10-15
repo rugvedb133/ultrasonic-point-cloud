@@ -1,59 +1,46 @@
-<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" xmlns:c2pa="http://c2pa.org/manifest">
+<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="140 84 590 300">
   <style>
     :not(svg):has(> title) {
       cursor: help
     }
   </style>
   <title>Spherical coordinates: distance, pan and tilt give x, y, z</title>
-  <path d="M250 300L474 300M234 310L458 310M218 320L442 320M202 330L426 330M186 340L410 340M170 350L394 350M154 360L378 360M250 300L154 360M278 300L182 360M306 300L210 360M334 300L238 360M362 300L266 360M390 300L294 360M418 300L322 360M446 300L350 360M474 300L378 360" stroke="#fff" stroke-opacity=".13" fill="none"/>
-  <path d="M250 300L250 104M278 300L278 104M306 300L306 104M334 300L334 104M362 300L362 104M390 300L390 104M418 300L418 104M446 300L446 104M474 300L474 104M250 300L474 300M250 272L474 272M250 244L474 244M250 216L474 216M250 188L474 188M250 160L474 160M250 132L474 132M250 104L474 104" stroke="#fff" stroke-opacity=".08" fill="none"/>
+  <path d="M250 300h224m-240 10h224m-240 10h224m-240 10h224m-240 10h224m-240 10h224m-240 10h224m-128-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60m124-60-96 60" stroke="#fff" stroke-opacity=".13" fill="none"/>
+  <path d="M250 300V104m28 196V104m28 196V104m28 196V104m28 196V104m28 196V104m28 196V104m28 196V104m28 196V104M250 300h224m-224-28h224m-224-28h224m-224-28h224m-224-28h224m-224-28h224m-224-28h224m-224-28h224" stroke="#fff" stroke-opacity=".08" fill="none"/>
   <g>
-  <title>x axis: the pan angle θ is measured from here</title>
-  <path d="M250 300L154 360" stroke="#e0383f" stroke-width="3" stroke-linecap="round">
-  </path>
-  <circle cx="154" cy="360" r="5" fill="#e0383f"/>
-  <text x="164" y="366" font-size="22" fill="#e0383f" font-family="JetBrains Mono, Consolas, monospace">
-    x
-  </text>
+    <title>x axis: the pan angle θ is measured from here</title>
+    <path d="m250 300-96 60" stroke="#e0383f" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="154" cy="360" r="5" fill="#e0383f"/>
+    <text x="164" y="366" font-size="22" fill="#e0383f" font-family="JetBrains Mono, Consolas, monospace">x</text>
   </g>
   <g>
-  <title>y axis</title>
-  <path d="M250 300L474 300" stroke="#35d07f" stroke-width="3" stroke-linecap="round">
-  </path>
-  <circle cx="474" cy="300" r="5" fill="#35d07f"/>
-  <text x="484" y="306" font-size="22" fill="#35d07f" font-family="JetBrains Mono, Consolas, monospace">
-    y
-  </text>
+    <title>y axis</title>
+    <path d="M250 300h224" stroke="#35d07f" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="474" cy="300" r="5" fill="#35d07f"/>
+    <text x="484" y="306" font-size="22" fill="#35d07f" font-family="JetBrains Mono, Consolas, monospace">y</text>
   </g>
   <g>
-  <title>z axis (vertical): the tilt angle φ is measured from here</title>
-  <path d="M250 300L250 104" stroke="#6f86ff" stroke-width="3" stroke-linecap="round">
-  </path>
-  <circle cx="250" cy="104" r="5" fill="#6f86ff"/>
-  <text x="260" y="110" font-size="22" fill="#6f86ff" font-family="JetBrains Mono, Consolas, monospace">
-    z
-  </text>
+    <title>z axis (vertical): the tilt angle φ is measured from here</title>
+    <path d="M250 300V104" stroke="#6f86ff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="250" cy="104" r="5" fill="#6f86ff"/>
+    <text x="260" y="110" font-size="22" fill="#6f86ff" font-family="JetBrains Mono, Consolas, monospace">z</text>
   </g>
-  <path d="M250 300L306 335L306 209" stroke="#b4b9d8" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
-  <path d="M250 300L306 209" stroke="#f08a24" stroke-width="4" stroke-linecap="round">
+  <path d="m250 300 56 35V209" stroke="#b4b9d8" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+  <path d="m250 300 56-91" stroke="#f08a24" stroke-width="4" stroke-linecap="round">
     <title>r: the straight line from the sensor to the object</title>
   </path>
   <circle cx="306" cy="209" r="8" fill="#d3222a">
     <title>The object the sensor is pointing at</title>
   </circle>
   <g>
-  <title>φ (phi): tilt, the angle down from the vertical z axis</title>
-  <path d="M250 238Q272 238 280 256" stroke="#f2f4ff" stroke-width="2" fill="none"/>
-  <text x="266" y="230" font-size="24" fill="#f2f4ff" font-style="italic" font-family="serif">
-    φ
-  </text>
+    <title>φ (phi): tilt, the angle down from the vertical z axis</title>
+    <path d="M250 238q22 0 30 18" stroke="#f2f4ff" stroke-width="2" fill="none"/>
+    <text x="266" y="230" font-size="24" fill="#f2f4ff" font-style="italic" font-family="serif">φ</text>
   </g>
   <g>
-  <title>θ (theta): pan, the angle around the z axis from the x axis</title>
-  <path d="M200 331Q254 356 295 328" stroke="#f2f4ff" stroke-width="2" fill="none"/>
-  <text x="242" y="374" font-size="24" fill="#f2f4ff" font-style="italic" font-family="serif">
-    θ
-  </text>
+    <title>θ (theta): pan, the angle around the z axis from the x axis</title>
+    <path d="M200 331q54 25 95-3" stroke="#f2f4ff" stroke-width="2" fill="none"/>
+    <text x="242" y="374" font-size="24" fill="#f2f4ff" font-style="italic" font-family="serif">θ</text>
   </g>
   <text x="290" y="278" font-size="26" fill="#f08a24" font-style="italic" font-family="serif">
     <title>r: the distance the HC-SR04 measures</title>r

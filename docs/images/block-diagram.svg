@@ -1,4 +1,4 @@
-<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" xmlns:c2pa="http://c2pa.org/manifest">
+<svg style="color-scheme:dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330">
   <style>
     :not(svg):has(> title) {
       cursor: help
@@ -7,59 +7,59 @@
   <title>Block diagram of the scanner</title>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M0 0L10 5L0 10Z" fill="#b4b9d8"/>
+      <path d="m0 0 10 5-10 5Z" fill="#b4b9d8"/>
     </marker>
     <filter id="soft" x="-20%" y="-60%" width="140%" height="220%">
       <feGaussianBlur stdDeviation="5"/>
     </filter>
   </defs>
   <g stroke="#b4b9d8" stroke-width="2.5" fill="none" marker-end="url(#a)">
-    <path d="M460 44H117a12 12 0 0 0-12 12V130"/>
-    <path d="M460 62H337a12 12 0 0 0-12 12V130"/>
-    <path d="M545 84V130"/>
-    <path d="M545 194V263a12 12 0 0 1-12 12H117a12 12 0 0 1-12-12V194"/>
-    <path d="M630 162H770"/>
-    <path d="M845 194V246"/>
+    <path d="M460 44H117a12 12 0 0 0-12 12v74"/>
+    <path d="M460 62H337a12 12 0 0 0-12 12v56"/>
+    <path d="M545 84v46"/>
+    <path d="M545 194v69a12 12 0 0 1-12 12H117a12 12 0 0 1-12-12v-69"/>
+    <path d="M630 162h140"/>
+    <path d="M845 194v52"/>
   </g>
-  <path d="M410 162H460" stroke="#b4b9d8" stroke-width="2.5" fill="none" marker-start="url(#a)" marker-end="url(#a)"/>
+  <path d="M410 162h50" stroke="#b4b9d8" stroke-width="2.5" fill="none" marker-start="url(#a)" marker-end="url(#a)"/>
   <g>
     <title>Mechanical link: the sensor is mounted on the motors, so it turns with them</title>
-    <path d="M190 162H240" stroke="#b4b9d8" stroke-width="2.5" fill="none" stroke-dasharray="3 3" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M190 162h50" stroke="#b4b9d8" stroke-width="2.5" fill="none" stroke-dasharray="3 3" marker-start="url(#a)" marker-end="url(#a)"/>
     <text x="30" y="318" font-size="14" fill="#b4b9d8" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Dotted line: the sensor is mounted on the motors, so it turns with them.</text>
   </g>
   <g>
     <title>Power supply: feeds the motors, the sensor and the microcontroller</title>
     <rect x="460" y="20" width="170" height="64" rx="10" fill="#2a2c4a" stroke="#b4b9d8" stroke-width="3"/>
-    <text x="545.0" y="59.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Power supply</text>
+    <text x="545" y="59" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Power supply</text>
   </g>
   <g>
     <title>Motors: the two servos that pan and tilt the mount</title>
     <rect x="20" y="130" width="170" height="64" rx="10" fill="#2a2c4a" stroke="#f08a24" stroke-width="3"/>
-    <text x="105.0" y="169.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Motors</text>
+    <text x="105" y="169" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Motors</text>
   </g>
   <g>
     <title>Ultrasonic sensor (HC-SR04): measures the distance to whatever it faces</title>
     <rect x="240" y="130" width="170" height="64" rx="10" fill="#2a2c4a" stroke="#4a9be0" stroke-width="3"/>
-    <text x="325.0" y="169.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Ultrasonic sensor</text>
+    <text x="325" y="169" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Ultrasonic sensor</text>
   </g>
   <g>
     <title>Microcontroller: reads the sensor, drives the motors and sends the readings to the PC</title>
     <rect x="460" y="130" width="170" height="64" rx="10" fill="#2a2c4a" stroke="#d3222a" stroke-width="3"/>
-    <text x="545.0" y="169.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Microcontroller</text>
+    <text x="545" y="169" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Microcontroller</text>
   </g>
   <g>
     <title>Python script: turns each distance and its two angles into an x, y, z point</title>
     <rect x="770" y="130" width="150" height="64" rx="10" fill="#2a2c4a" stroke="#35d07f" stroke-width="3"/>
-    <text x="845.0" y="169.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Python script</text>
+    <text x="845" y="169" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Python script</text>
   </g>
   <g>
     <title>Display: shows the plotted point cloud</title>
     <rect x="770" y="246" width="150" height="64" rx="10" fill="#2a2c4a" stroke="#6f86ff" stroke-width="3"/>
-    <text x="845.0" y="285.0" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Display</text>
+    <text x="845" y="285" text-anchor="middle" font-size="19" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif">Display</text>
   </g>
   <g>
     <title>Serial link: carries the distance and angle readings to the PC</title>
-    <rect x="644" y="143" width="102" height="38" rx="14" fill="#3b3e66" fill-opacity="0.6" filter="url(#soft)"/>
-    <text x="695" y="166" text-anchor="middle" font-size="15" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" style="filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.9));">Serial link</text>
+    <rect x="644" y="143" width="102" height="38" rx="14" fill="#3b3e66" fill-opacity=".6" filter="url(#soft)"/>
+    <text x="695" y="166" text-anchor="middle" font-size="15" fill="#eceefb" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" style="filter:drop-shadow(3px 3px 3px rgba(0,0,0,0.9))">Serial link</text>
   </g>
 </svg>

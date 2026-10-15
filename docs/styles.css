@@ -1,4 +1,4 @@
-/* Design tokens: colours come from the real hardware and our 3D viewer screenshot */
+/* Design tokens */
 :root {
   --void:    #1f2138;   /* viewer background */
   --floor:   #3b3e66;   /* viewer floor      */
@@ -81,11 +81,10 @@ p, li {
 }
 .lede {
   color: var(--muted);
-  /* max-width: 40rem; */
   margin: 1rem 0 0;
 }
 
-/* Sticky table of contents */
+/* Sticky ToC */
 .site-header {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
@@ -96,7 +95,6 @@ p, li {
   padding: 0 1.25rem;
 }
 .toc {
-  /* max-width: 62rem; */
   margin: 0 auto;
 }
 .toc ul {
@@ -151,7 +149,7 @@ main > section {
   padding: 3rem 0;
 }
 
-/* Hero: dark viewer look, grid floor like our 3D viewer */
+/* Hero */
 .hero {
   position: relative;
   overflow: hidden;
@@ -175,9 +173,6 @@ main > section {
 .axes {
   display: block;
   margin-bottom: 1rem;
-}
-.hero-copy {
-  /* max-width: 40rem; */
 }
 .hero-copy p {
   color: #d3d7f0;
@@ -227,7 +222,7 @@ main > section {
   align-items: baseline;
 }
 
-/* Stack section */
+/* Stack */
 .stack {
   border-top: 1px solid var(--line);
 }
@@ -323,11 +318,7 @@ main > section {
 .how h2 {
   font-size: 1.9rem;
 }
-.how p {
-  /* max-width: 42rem; */
-}
 .steps {
-  /* max-width: 42rem; */
   padding-left: 1.4rem;
   margin: 1.6rem 0 2rem;
 }
@@ -424,9 +415,6 @@ main > section {
 .scan h2 {
   font-size: 1.9rem;
 }
-.scan p {
-  /* max-width: 42rem; */
-}
 .scan .tools {
   margin-bottom: 2rem;
 }
@@ -478,7 +466,6 @@ main > section {
 }
 .result-text p {
   margin: 0 0 1rem;
-  /* max-width: 36rem; */
 }
 @media (max-width: 760px) {
   .result-grid {
@@ -490,9 +477,6 @@ main > section {
 }
 .reflection h2 {
   font-size: 1.9rem;
-}
-.reflection p {
-  /* max-width: 42rem; */
 }
 .lessons {
   display: grid;
@@ -551,7 +535,6 @@ main > section {
 .stage img {
   display: block;
   width: 100%;
-  /* max-width: 50rem; */
   height: auto;
   margin: 0 auto;
 }
@@ -668,11 +651,7 @@ main > section {
   }
 }
 
-/* Tool logos.
-   The element with .tool-logo gets a small icon after its text, drawn as a mask so it follows the text colour
-   and switches to the brand colour (--color) on hover. data-tool picks the icon: it can sit on the same
-   element or on a parent, because custom properties inherit.
-   Icons come from Simple Icons through jsDelivr (pinned version). Nothing is hosted here. */
+/* Tool logos. */
 .tool-logo[data-tool]::after,
 [data-tool] .tool-logo::after {
   content: "";
@@ -703,15 +682,13 @@ main > section {
   --logo: url("https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/youtube.svg");
   --color: #ff0000;
 }
-/* Neither Simple Icons nor Devicon has a Texas Instruments or Code Composer Studio logo, and ti.com sends no CORS
-   headers (so a cross-origin mask is blocked). These two marks are inlined as data URIs instead, using only the
-   shapes from the files on ti.com, since a mask ignores colour. */
+/* Inlined since these don't exist in the SimpleIcons library */
 [data-tool="ti"] {
-  --logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M232.1,85.75v-28.32h-45.41l-5.72,28.57h16.34l-5.24,26.26h-16.34l-5.66,28.46c-.44,1.93-.76,3.32-.96,4.67-1.33,8.71,2.47,8.28,14.69,8.28l-5.59,27.99h-21.38c-20.21,0-36.65-.21-32.38-20.87.67-3.23,1.48-6.36,2.07-9.44l7.64-39.09h-15.71l5.25-26.26h15.7l5.73-28.57h-14.7V14.37h-54.37v87.63H11c1.61,22.72,21.72,26.02,29.04,42.16,5.04,11.12,9.46,30.67,24.21,30.85,11.3.14,11.3-14.61,25.83-14.61s20.97,27.59,33.89,50.3c9.68,17.85,25.77,29.81,40.35,30.82,11.96.83,17.75-3.24,17.75-3.24-3.23-6.49-4.84-12.97-4.84-22.71,0-14.61,11.29-29.19,24.21-38.93,17.75-13,37.12-17.87,43.57-19.48v-45.44s-12.9-6.91-12.9-25.98ZM158.03,153.67l19.09-96.24h-22l-19.08,96.24h22ZM183.03,27.01h-22l-4.21,21.24h22l4.21-21.24Z'/%3E%3C/svg%3E");
+  --logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M232.1 85.75V57.43h-45.41L180.97 86h16.34l-5.24 26.26h-16.34l-5.66 28.46c-.44 1.93-.76 3.32-.96 4.67-1.33 8.71 2.47 8.28 14.69 8.28l-5.59 27.99h-21.38c-20.21 0-36.65-.21-32.38-20.87.67-3.23 1.48-6.36 2.07-9.44l7.64-39.09h-15.71L123.7 86h15.7l5.73-28.57h-14.7V14.37H76.06V102H11c1.61 22.72 21.72 26.02 29.04 42.16 5.04 11.12 9.46 30.67 24.21 30.85 11.3.14 11.3-14.61 25.83-14.61s20.97 27.59 33.89 50.3c9.68 17.85 25.77 29.81 40.35 30.82 11.96.83 17.75-3.24 17.75-3.24-3.23-6.49-4.84-12.97-4.84-22.71 0-14.61 11.29-29.19 24.21-38.93 17.75-13 37.12-17.87 43.57-19.48v-45.44s-12.9-6.91-12.9-25.98Zm-74.07 67.92 19.09-96.24h-22l-19.08 96.24h22Zm25-126.66h-22l-4.21 21.24h22z'/%3E%3C/svg%3E");
   --color: #cc0000;
 }
 [data-tool="ccs"] {
-  --logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cpath d='m18.94 141.68 73.62 42.37v-85L18.94 56.68zm22.84-48.56 27.71 16.09v32.17l-27.71-16.02z'/%3E%3Cpath d='M96 7.95 22.38 50.59 96 92.96l73.62-42.37zM67.97 50.58l28.05-16.14 28.06 16.16-28.06 16.2z'/%3E%3Cpath d='M99.44 99.05v85L173.06 142V56.68zm50.91 29.41-28.16 16.16v-32.27l28.16-16.25z'/%3E%3C/svg%3E");
+  --logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cpath d='m18.94 141.68 73.62 42.37v-85L18.94 56.68zm22.84-48.56 27.71 16.09v32.17l-27.71-16.02zM96 7.95 22.38 50.59 96 92.96l73.62-42.37zM67.97 50.58l28.05-16.14 28.06 16.16-28.06 16.2zm31.47 48.47v85L173.06 142V56.68zm50.91 29.41-28.16 16.16v-32.27l28.16-16.25z'/%3E%3C/svg%3E");
   --color: #cc0000;
 }
 [data-tool="github"] {
@@ -827,13 +804,12 @@ main > section {
 }
 .lightbox-caption {
   margin: 0;
-  /* max-width: 60ch; */
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* Accent colours: set data-accent on an element, and rules that use var(--accent) pick it up */
+/* Accent colours */
 [data-accent="blue"] {
   --accent: var(--pcb);
 }
@@ -847,12 +823,14 @@ main > section {
   --accent: var(--wire);
 }
 
-/* The skip link moves focus to <main>; it does not need a ring of its own */
+/* The skip link moves focus to <main>;
+it does not need a ring of its own */
 main:focus {
   outline: none;
 }
 
-/* In forced-colors mode backgrounds are replaced, so give the masked icons a system colour to stay visible */
+/* In forced-colors mode backgrounds are replaced,
+so give the masked icons a system colour to stay visible */
 @media (forced-colors: active) {
   .tool-logo[data-tool]::after,
   [data-tool] .tool-logo::after {
